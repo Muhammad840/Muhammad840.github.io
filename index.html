@@ -13,76 +13,119 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div id="logo">
-                <img src="X:\Muhammad\Downloads\menatours-Egypt-37658-1554118075-odg2.png" alt="" width="180px">
+        <nav class="nav">
+            <div class="nav-content">
+                <div id="logo">
+                    <img src="X:\Muhammad\Downloads\menatours-Egypt-37658-1554118075-odg2.png" alt="" width="180px">
+                </div>
+                <ul class="right-nav">
+                    <li><a href="">Home</a></li>
+                    <li class="trig"><a href="">Corporate Travel Management</a>
+                        <ul class="dropdown">
+                            <li><a href="">Getting Started</a>
+                                <ul class="mini-dropdown">
+                                    <li><a href="">Corporate Travel Policy</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Engaging Travelers</a>
+                                <ul class="mini-dropdown">
+                                    <li><a href="">Staying Overnight</a></li>
+                                    <li><a href="">Travel Booking Services</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Managing Risk</a>
+                                <ul class="mini-dropdown">
+                                    <li><a href="">Traveler Care</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Business Traveler Savings</a>
+                                <ul class="mini-dropdown">
+                                    <li><a href="">Supplier Management</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Travel Consulting</a>
+                                <ul class="mini-dropdown">
+                                    <li><a href="">Travel Services Outsourcing</a></li>
+                                    <li><a href="">Travel Expense Strategy</a></li>
+                                    <li><a href="">Driving Action</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Business Traveler Services</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="">Meetings And Events</a></li> -->
+                    <li class="trig"><a href="">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="">Ground Handling</a></li>
+                            <li><a href="">Hotels and Cruises</a></li>
+                            <li><a href="">Our Fleet</a></li>
+                            <li><a href="">Airline Services</a></li>
+                            <li><a href="">Signature Services</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="">Airline Services</a></li> -->
+                    <li class="trig"><a href="">About</a>
+                        <ul class="dropdown">
+                            <li><a href="">Our History</a></li>
+                            <li><a href="">Our Presence</a></li>
+                            <li><a href="">Our Experts</a></li>
+                            <li><a href="">Clients and Testimonials</a></li>
+                            <li><a href="">Our Strategy</a></li>
+                            <li><a href="">Our Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li style="display: none;"><a href="">Contact</a></li>
+                </ul>  
+                <div class="menu" id="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-            <ul class="right-nav">
-                <li><a href="">Home</a></li>
-                <li class="trig"><a href="">Corporate Travel Management</a>
-                    <ul class="dropdown">
-                        <li><a href="">Getting Started</a>
-                            <ul class="mini-dropdown">
-                                <li><a href="">Corporate Travel Policy</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Engaging Travelers</a>
-                            <ul class="mini-dropdown">
-                                <li><a href="">Staying Overnight</a></li>
-                                <li><a href="">Travel Booking Services</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Managing Risk</a>
-                            <ul class="mini-dropdown">
-                                <li><a href="">Traveler Care</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Business Traveler Savings</a>
-                            <ul class="mini-dropdown">
-                                <li><a href="">Supplier Management</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Travel Consulting</a>
-                            <ul class="mini-dropdown">
-                                <li><a href="">Travel Services Outsourcing</a></li>
-                                <li><a href="">Travel Expense Strategy</a></li>
-                                <li><a href="">Driving Action</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Business Traveler Services</a></li>
+            <div class="hamburger-holder trans">
+                <div class="container hamburger-menu">
+                    <li class="item">
+                        Home
+                    </li>
+                    <li class="item">
+                        <span>Corporate Travel Management</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <ul class="mini-items trans">
+                        <li class="mini-item"><a href="">Travel Services Outsourcing</a></li>
+                        <li class="mini-item"><a href="">Travel Expense Strategy</a></li>
+                        <li class="mini-item"><a href="">Driving Action</a></li>
                     </ul>
-                </li>
-                <!-- <li><a href="">Meetings And Events</a></li> -->
-                <li class="trig"><a href="">Services</a>
-                    <ul class="dropdown">
-                        <li><a href="">Our History</a></li>
-                        <li><a href="">Our Presence</a></li>
-                        <li><a href="">Our Services</a>
-                            <ul class="mini-dropdown">
-                                <li><a href="">Ground Handling</a></li>
-                                <li><a href="">Hotels and Cruises</a></li>
-                                <li><a href="">Our Fleet</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">Signature Services</a></li>
+                    <li class="item">
+                        <span>Services</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <ul class="mini-items trans">
+                        <li class="mini-item"><a href="">Ground Handling</a></li>
+                        <li class="mini-item"><a href="">Hotels and Cruises</a></li>
+                        <li class="mini-item"><a href="">Our Fleet</a></li>
+                        <li class="mini-item"><a href="">Airline Services</a></li>
+                        <li class="mini-item"><a href="">Signature Services</a></li>
                     </ul>
-                </li>
-                <!-- <li><a href="">Airline Services</a></li> -->
-                <li class="trig"><a href="">Why Menatours</a>
-                    <ul class="dropdown">
-                        <li><a href="">Our Experts</a></li>
-                        <li><a href="">Clients and Testimonials</a></li>
-                        <li><a href="">Our Strategy</a></li>
-                        <li><a href="">Our Leadership</a></li>
+                    <li class="item">
+                        <span>About</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <ul class="mini-items trans">
+                        <li class="mini-item"><a href="">Our History</a></li>
+                        <li class="mini-item"><a href="">Our Presence</a></li>
+                        <li class="mini-item"><a href="">Our Experts</a></li>
+                        <li class="mini-item"><a href="">Clients and Testimonials</a></li>
+                        <li class="mini-item"><a href="">Our Strategy</a></li>
+                        <li class="mini-item"><a href="">Our Leadership</a></li>
                     </ul>
-                </li>
-                <li style="display: none;"><a href="">Contact</a></li>
-            </ul>
+                </div>
+            </div>
         </nav>
     <div class="main-section">
-        <div class="maincontainer">
+        <div class="container maincontainer">
             <div class="textcontainer"><h1>GET THE BEST OF PROFESSIONAL TRAVEL MANAGEMENT</h1></div>
-            <h2>Helping you and your travelers go further every day</h2>
+            <h3>Helping you and your travelers go further every day</h3>
             <div class="btncontainer"><button class="btn"><span><i class="fa-solid fa-phone"></i> CONTACT NOW</span></button></div>
         </div>
     </div>
@@ -150,7 +193,7 @@
         <div class="container">
             <div class="s4-wrapper">
                 <div class="header">
-                    <h2>We're here to help</h2>
+                    <h2>Experience the best of our services</h2>
                     <p>
                         Whether you are a corporation looking for corporate traveler management, a travel 
                         agency looking for a partner, or an airline looking for comprehensive airline services
@@ -163,26 +206,32 @@
                             <div class="img-holder">
                                 <img src="Feature-1.jpg" alt="" id="height-subject">
                             </div>
-                            <h3>Professional travel management</h3>
+                            <div class="overlay"></div>
+                            <div class="abstretch"><h3>Ground handling</h3></div>
                         </div>
                         <div class="side back">
+                            <div class="box-head2">
+                                <h3>Ground handling</h3>
+                            </div>
                             <p>
-                                Go beyond the hype. Discover the benefits a professional travel management company 
-                                can bring to your company.
+                                From the moment your travelers touchdown to the moment they take off again.
                             </p>
-                            <button>Read more</button>
+                            <i class="fa-solid fa-street-view"></i>
                         </div>
                     </div>
                     <div class="box">
                         <div class="side front">
-                            <h3>Learn to love data</h3>
+                            <div class="abstretch"><h3>Hotels and Cruises</h3></div>
                         </div>
                         <div class="side back">
+                            <div class="box-head2">
+                                <h3>Hotels and Cruises</h3>
+                            </div>
                             <p>
-                                Find new ways to get the most from your business travel program. Spend less time 
-                                reporting and more time managing with Menatours’ Advanced 5 Dimensional Reporting.
+                                Gain access to exclusive rates and upgrades and enjoy room allotments at numerous
+                                properties across Egypt, both on land and on the Nile.
                             </p>
-                            <button>Read more</button>
+                            <i class="fa-solid fa-hotel"></i>
                         </div>
                     </div>
                     <div class="box">
@@ -190,25 +239,32 @@
                             <div class="img-holder">
                                 <img src="Feature-4.jpg" alt="">
                             </div>
-                            <h3>Destination management</h3>
+                            <div class="overlay"></div>
+                            <div class="abstretch"><h3>Fleet</h3></div>
                         </div>
                         <div class="side back">
+                            <div class="box-head2">
+                                <h3>Fleet</h3>
+                            </div>
                             <p>
                                 Menatours is a holistic destination management company and a leading incoming travel agency in Egypt.
                             </p>
-                            <button>Read more</button>
+                            <i class="fa-solid fa-ship"></i>
                         </div>
                     </div>
                     <div class="box">
                         <div class="side front">
-                            <h3>Drive travel savings</h3>
+                            <div class="abstretch"><h3>Signatures</h3></div>
                         </div>
                         <div class="side back">
+                            <div class="box-head2">
+                                <h3>Signatures</h3>
+                            </div>
                             <p>
                                 Whether you are a corporation looking to trim your travel costs or an outbound operator
                                 looking for improved efficiencies, we can help your bottom line.
                             </p>
-                            <button>Read more</button>
+                            <i class="fa-solid fa-file-signature"></i>
                         </div>
                     </div>
                     <div class="box">
@@ -216,28 +272,35 @@
                             <div class="img-holder">
                                 <img src="Feature-5.jpg" alt="">
                             </div>
-                            <h3>Work with the best people in business</h3>
+                            <div class="overlay"></div>
+                            <div class="abstretch"><h3>Airline</h3></div>
                         </div>
                         <div class="side back">
+                            <div class="box-head2">
+                                <h3>Airline</h3>
+                            </div>
                             <p>
                                 Get to know over 70 travel professionals working to help your employees be successful in their travels.
                             </p>
-                            <button>Read more</button>
+                            <i class="fa-solid fa-plane-departure"></i>
                         </div>
                     </div>
                     <div class="box">
                         <div class="side front">
-                            <h3>Moving forward together</h3>
+                            <div class="abstretch"><h3>Moving forward together</h3></div>
                         </div>
                         <div class="side back">
+                            <div class="box-head2">
+                                <h3>Moving forward together</h3>
+                            </div>
                             <p>
                                 We make it our mission to bring the best customer experience to you and your employees. 
                                 This is our B2B4E approach.
                             </p>
-                            <button>Read more</button>
                         </div>
                     </div>
                 </div>
+                <button class="btn-services">Read more</button>
             </div>
         </div>
     </section>
@@ -246,7 +309,7 @@
             <h2>Done exploring?</h2>
             <div class="btns-cover">
                 <button class="btn btn-2"><span><i class="fa-solid fa-phone"></i>Contact us</span></button>
-                <button class="btn btn-3"><span><i class="fa-solid fa-phone"></i>Send a revieew</span></button>
+                <button class="btn btn-3"><span><i class="fa-solid fa-paper-plane"></i>Send a revieew</span></button>
             </div>
         </div>
     </section>
@@ -262,7 +325,10 @@
                 </ul>
                 <ul class="f-list">
                     <li>Search</li>
-                    <li></li>
+                    <li class="search">
+                        <input type="text" placeholder="Search...">
+                        <label for=""><i class="fa-solid fa-search"></i></label>
+                    </li>
                 </ul>
                 <ul class="f-list">
                     <li>Menatours head office</li>
@@ -272,11 +338,25 @@
                     <li><a href="">Email: <span>business@menatours.com.eg</span></a></li>
                     <li><a href="">Web: <span>www.menatours.com.eg</span></a></li>
                 </ul>
-                <ul class="f-list">
+                <ul class="f-list subscribe">
                     <li>Subscribe</li>
                     <li>
                         <label for="email">Email Address</label>
-                        <input type="email" placeholder="ENTER YOUR EMAIL">
+                        <input type="email" placeholder="Enter your email">
+                    </li>
+                    <li>
+                        <label for="Interest">Interest</label>
+                        <div class="checkbox">
+                            <input type="checkbox" name="Business">
+                            <label for="Business" class="clabel">Business travel</label>
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" name="Inbound">
+                            <label for="Inbound" class="clabel">Inbound tourism</label>
+                        </div>
+                    </li>
+                    <li>
+                        <button>Subscribe</button>
                     </li>
                 </ul>
             </div>
@@ -287,6 +367,8 @@
             </div>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
