@@ -1,10 +1,6 @@
 Array.from(document.querySelector('.right-nav').children).forEach((item, i) => {
-    item.addEventListener('animationend', () => {
-        item.style.opacity = '1'
-    })
-    item.style.animationDelay = i*0.15 + 0.5 + 's'
 })
-
+/*                              NAV DROPDOWN */
 let dropdowns = []
 AddDropdownArray()
 function AddDropdownArray() {
@@ -90,7 +86,54 @@ dropdowns.forEach(dropdown => {
         })
     })
 })
-/*
+/*                          SCHEME SWITCH */
+const switchers = document.querySelectorAll('.switch__control')
+const root = document.querySelector(':root')
+let light_on = true
+
+switchers.forEach(switcher => switcher.addEventListener('click', switchmode))
+if (localStorage.getItem('mode') === 'dark') 
+    switchmode();
+
+function switchmode() {
+    document.querySelectorAll('.switch__icon').forEach(icon => {
+        icon.classList.toggle('off')
+        icon.classList.toggle('toleft')
+    })
+    switchers.forEach(switcher => switcher.classList.toggle('bg-slight'))
+    if (light_on) {
+        root.style.setProperty('--bg-color-1', 'rgb(18 17 16)')
+        root.style.setProperty('--bg-color-2', 'rgb(28 28 28)')
+        root.style.setProperty('--bg-color-3', 'rgb(36 37 38)')
+        root.style.setProperty('--footer-bg-1', 'rgb(10, 10, 10)')
+        root.style.setProperty('--footer-bg-2', 'rgb(0, 0, 0)')
+        root.style.setProperty('--tx-color-1', 'rgb(239 231 229)')
+        root.style.setProperty('--brand-color-2', 'rgb(201,90,38)')
+        root.style.setProperty('--hover-color', 'rgba(0,0,0,0.3)')
+        root.style.setProperty('--input-color', 'rgb(223, 226, 231)')
+        root.style.setProperty('--input-color-2', 'rgb(40, 40, 40)')
+        root.style.setProperty('--shadow-1', '0px 0px 20px 5px rgb(255 255 255 / 4%)')
+        light_on = false;
+        localStorage.setItem('mode', 'dark')
+    }
+    else {
+        root.style.setProperty('--bg-color-1', 'rgb(240, 240, 240)')
+        root.style.setProperty('--bg-color-2', 'white')
+        root.style.setProperty('--bg-color-3', 'rgb(223, 226, 231)')
+        root.style.setProperty('--footer-bg-1', 'rgb(37, 40, 51)')
+        root.style.setProperty('--footer-bg-2', 'rgb(21, 23, 30)')
+        root.style.setProperty('--tx-color-1', 'rgb(70,70,77)')
+        root.style.setProperty('--brand-color-2', 'rgba(253, 102, 2, 0.75)')
+        root.style.setProperty('--hover-color', 'rgba(0,0,0,0.02)')
+        root.style.setProperty('--input-color', '#777')
+        root.style.setProperty('--input-color-2', 'rgb(55, 60, 80)')
+        root.style.setProperty('--shadow-1', '0px 0px 20px 5px rgb(0 0 0 / 7%)')
+        light_on = true;
+        localStorage.setItem('mode', 'light')
+    }
+}
+
+/*                  IDK SOMETHING RANDOM
 const boxes = document.querySelector('.boxes')
 const boxesGapPx = window.getComputedStyle(boxes, null).getPropertyValue('row-gap')
 const imgHeightPx = window.getComputedStyle(document.querySelector('#height-subject'), null).getPropertyValue('height')
@@ -100,7 +143,7 @@ console.log(getComputedStyle(boxes, null))
 console.log((imgHeight*2) + boxesGap)
 boxes.style.height =  (imgHeight*2) + boxesGap + 8 + 'px'
 */
-
+/*                          NAVBAR BG */
 let menuOpened = false;
 
 let scrolling;
@@ -114,17 +157,21 @@ function scrollWatch() {
         const scrolled = window.scrollY
         if (menuOpened === false) {
             console.log(menuOpened)
+            document.querySelector('.nav').style.backgroundColor = "rgba(0 ,0 ,0, 0.4)"
+            /*
             if (scrolled > 100) {
                 document.querySelector('.nav').style.backgroundColor = "rgba(0 ,0 ,0, 0.4)"
             }
             else {
                 document.querySelector('.nav').style.backgroundColor = "transparent"
             }
+            */
         }
     }
 }
 
 
+/*                      HAMBURGER NAVBAR */
 const menu = document.getElementById("menu");
 const hamburger = document.querySelector('.hamburger-holder')
 const nav = document.querySelector('.nav')
@@ -146,11 +193,9 @@ menu.addEventListener("click", () => {
         nav.style.backgroundColor = "rgba(0 ,0 ,0, 0.8)"
         nav.style.minHeight = itemHeight*iCount + iPadding*2 + 64 + "px"
         hamburger.style.maxHeight = itemHeight*iCount + "px"
-        console.log(iPadding)
         menuOpened = true
     }
     else {
-        console.log("asdddd")
         nav.style.minHeight = 64 + "px"
         hamburger.style.maxHeight = "0px"
         document.querySelectorAll('.mini-items').forEach(it => {
@@ -164,6 +209,9 @@ menu.addEventListener("click", () => {
                 item.classList.remove('opened')
             }
         })
+        if (document.querySelector('.rt-90')) {
+            document.querySelectorAll('.rt-90').forEach(rt => rt.classList.remove('rt-90'))
+        }
         menuOpened = false;
     }
 });
@@ -199,3 +247,131 @@ document.querySelectorAll('.item').forEach(item => {
         }
     })
 })
+
+/*                    Leaders
+
+
+
+/*                  RANDOM TEST
+let moi = [];
+let oll = document.querySelectorAll('.message-2CShn3')
+Array.from(oll.children).forEach(ch1 => {
+    Array.from(ch1.children).forEach(ch2 => {
+        if (ch2.nodeName === 'h3') {
+            
+        }
+    })
+})
+let allMessages = [];
+let myMessages = [];
+let prevMessages =[];
+function refresho() {
+    Array.from(document.querySelectorAll('.button-3bklZh')).forEach(btn => {
+        if (!btn.nextElementSibling) {
+            if (btn.previousElementSibling.getAttribute('aria-label') === 'Edit') {
+                myMessages.push(btn)
+            }
+        }
+    })
+}
+function deleteo() {
+    myMessages.forEach(msg => {
+        msg.click()
+    })
+    Array.from(document.querySelectorAll('#message-actions-delete')).forEach(dlto => {
+        dlto.click()
+    })
+    Array.from(document.querySelectorAll('.colorRed-rQXKgM')).forEach(dlto => {
+        dlto.click()
+    })
+    prevMessages = myMessages;
+    myMessages =[];
+}                   TEST END
+*/
+/*                         MODAL */
+/*
+document.querySelector('.btn-3').addEventListener('click', () => {
+    document.querySelector('.modal').classList.add('modal-on')
+})
+
+function modalClose() {
+    document.querySelector('.modal').classList.remove('modal-on')
+}
+
+document.querySelector('.close').addEventListener('click', modalClose)
+document.querySelector('.modal').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) {
+        modalClose()
+    }
+})*/
+
+/*                          LOADER + ON LOAD */
+window.addEventListener('load', () => {
+    // Logo animation
+    document.querySelector('#logo').classList.add('logo-animation')
+    //  Loader
+    if (document.querySelector('.loader')) {
+        document.querySelector('.loader').style.cssText += 'visibility: hidden;'
+    }
+    //  NAVBAR animation
+    Array.from(document.querySelector('.right-nav').children).forEach((child, i) => {
+        if (child.nodeName === 'LI') {
+            child.style.cssText += 'animation: 1s ease-out ' + (i*0.15) + 's nav-li;'
+            child.addEventListener('animationend', () => {
+                child.style.opacity = '1'
+            })
+        }
+    })
+    //  Flip cards transition
+    if (document.querySelector('.boxes')) {
+        Array.from(document.querySelector('.boxes').children).forEach((box, i) => {
+            console.log(box)
+            box.style.transition = 'all 0.5s ' + ((i*0.1) + 0.1) + 's ease-out'
+        })
+    }
+    //    services / Scrumb transition 
+    if (document.querySelector('.scrumb')) {
+        Array.from(document.querySelector('.scrumb').children).forEach((item, i) => {
+            let delay = (i*0.1*1.3) + 0.2
+            item.style.transition = 'all .5s ' + delay + 's ease-out'
+            item.addEventListener('transitionend', transitionResetter(item))
+        })
+        Array.from(document.querySelectorAll('.scrumb__icon')).forEach((icon, i) => {
+            let delay = (i*0.1*1.3) + 0.2
+            icon.style.transition = 'all 0.7s ' + delay + 's cubic-bezier(0.600, 0.160, 0.355, 1.865)'
+        })
+    }
+    //    services / airline transition 
+    if (document.querySelector('.airline')) {
+        Array.from(document.querySelectorAll('.airline__icon')).forEach((item, i) => {
+            let delay = (i*0.1*1.7) + 0.2
+            item.style.transition = 'all .5s ' + delay + 's ease-out'
+        })
+        Array.from(document.querySelectorAll('.airline__list p::after')).forEach((item, i) => {
+            let delay = (i*0.1*1.7) + 0.2
+            item.style.transition = 'all .5s ' + delay + 's ease-out'
+        })
+    }
+    // Footer transition
+    if (document.querySelector('footer')) {
+        document.querySelectorAll('footer ul').forEach(ul => {
+            Array.from(ul.children).forEach((li, i) => {
+                if (i !== 0) {
+                    li.style.transition = 'all 0.5s ' + ((i*0.1) + 0.2) + 's ease-out'
+                }
+                else {
+                    li.style.transition = 'all .5s var(--timing-1)'
+                }
+            })
+        })
+    }
+})
+
+function transitionResetter(element) {
+    function InnerRes() {
+        console.log(element)
+        element.style.transition = ''
+        element.removeEventListener('transitionend', transitionResetter)
+    }
+    return InnerRes
+}

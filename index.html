@@ -5,18 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Menatours</title>
+    <link rel="icon" href="img/logo/title.png" type="image/icon type">
+    <link rel="stylesheet" href="styles/loader.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="assets/intl-tel-input-master/src/css/intlTelInput.css">
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 <body>
+    <div class="loader">
+        <div class="gif"></div>
+    </div>
     <header>
         <nav class="nav">
             <div class="nav-content">
                 <div id="logo">
-                    <img src="X:\Muhammad\Downloads\menatours-Egypt-37658-1554118075-odg2.png" alt="" width="180px">
+                    <a href="index.html">
+                        <img src="img\logo\menatours-Egypt-37658-1554118075-odg2.png" alt="" width="180px">
+                    </a>
                 </div>
                 <ul class="right-nav">
                     <li><a href="">Home</a></li>
@@ -54,7 +62,7 @@
                         </ul>
                     </li>
                     <!-- <li><a href="">Meetings And Events</a></li> -->
-                    <li class="trig"><a href="">Services</a>
+                    <li class="trig"><a href="services.html">Services</a>
                         <ul class="dropdown">
                             <li><a href="">Ground Handling</a></li>
                             <li><a href="">Hotels and Cruises</a></li>
@@ -64,17 +72,22 @@
                         </ul>
                     </li>
                     <!-- <li><a href="">Airline Services</a></li> -->
-                    <li class="trig"><a href="">About</a>
+                    <li class="trig"><a href="about.html">About</a>
                         <ul class="dropdown">
-                            <li><a href="">Our History</a></li>
+                            <li><a href="about.html#history">Our History</a></li>
                             <li><a href="">Our Presence</a></li>
-                            <li><a href="">Our Experts</a></li>
-                            <li><a href="">Clients and Testimonials</a></li>
+                            <li><a href="about.html#experts">Our Experts</a></li>
+                            <li><a href="about.html#clients">Clients and Testimonials</a></li>
                             <li><a href="">Our Strategy</a></li>
-                            <li><a href="">Our Leadership</a></li>
+                            <li><a href="about.html#leadership">Our Leadership</a></li>
                         </ul>
                     </li>
-                    <li style="display: none;"><a href="">Contact</a></li>
+                    <li class="switch">
+                        <div class="switch__control">
+                            <i class="switch__icon fa-regular fa-sun off"></i>
+                            <i class="switch__icon fa-regular fa-moon"></i>
+                        </div>
+                    </li>
                 </ul>  
                 <div class="menu" id="menu">
                     <span></span>
@@ -85,7 +98,13 @@
             <div class="hamburger-holder trans">
                 <div class="container hamburger-menu">
                     <li class="item">
-                        Home
+                        <span>Home</span>
+                        <div class="switch">
+                            <div class="switch__control">
+                                <i class="switch__icon fa-regular fa-sun off"></i>
+                                <i class="switch__icon fa-regular fa-moon"></i>
+                            </div>
+                        </div>
                     </li>
                     <li class="item">
                         <span>Corporate Travel Management</span>
@@ -126,25 +145,31 @@
         <div class="container maincontainer">
             <div class="textcontainer"><h1>GET THE BEST OF PROFESSIONAL TRAVEL MANAGEMENT</h1></div>
             <h3>Helping you and your travelers go further every day</h3>
-            <div class="btncontainer"><button class="btn"><span><i class="fa-solid fa-phone"></i> CONTACT NOW</span></button></div>
+            <div class="btncontainer">
+                <a href="contact.html" class="button btn">
+                    <span><i class="fa-solid fa-phone"></i> CONTACT NOW</span>
+                </a>
+            </div>
         </div>
     </div>
     </header>
     <section class="section-2">
-        <div class="container">
+        <div class="container container-photo">
             <div class="section-holder">
                 <div class="side side-1">
                     <div class="img-container img1">
-                        <img src="Farouk-Nasser-Highlight.jpg" alt="">
+                        <img src="img/Farouk-Nasser-Highlight.jpg" alt="">
                     </div>
                     <div class="text-container">
                         <h3>How much will travel cost in 2022?</h3>
-                        <p>
+                        <p class="quoted">
+                            <i class="fa-solid fa-quote-left"></i>
                             As we look ahead to a new decade, there are many economic, technological and
                             political influences driving changes in the world of travel in Egypt and 
                             the Middle East. Join Menatours to uncover industry intelligence and price
                             projections across air, hotel, and ground, empowering your travel program
                             and employees as you prepare for the year ahead.
+                            <i class="fa-solid fa-quote-right"></i>
                         </p>
                         <div class="mini-text">
                             <small class="sayer">-- Dr. Farouk Nasser</small>
@@ -169,7 +194,7 @@
                         </p>
                     </div>
                     <div class="img-container img2">
-                        <img src="travel-management-highlight.png" alt="">
+                        <img src="img/travel-management-highlight.png" alt="">
                     </div>
                 </div>
             </div>
@@ -178,14 +203,11 @@
     <section class="section-3">
         <div class="container">
             <div class="text-section-cover">
-                <h2>Want to get ahead of corporate travel costs?</h2>
+                <h2>Want to know more about our offices?</h2>
                 <p>
-                    Effective corporate travel management requires regular and up-to-date insights into where 
-                    prices are heading—and why. Anticipate changes. Take action quickly. Every quarter, Menatours’
-                    advanced predictive analytics will use the latest data available to provide travel managers 
-                    with our price forecast for air, bringing the crucial information closer to when booking 
-                    decisions are made.
+                    Look up the details of our 18 offices standing between different 10 cities
                 </p>
+                <a href="locations.html" class="button btn-type2">Discover</a>
             </div>
         </div>
     </section>
@@ -204,7 +226,7 @@
                     <div class="box">
                         <div class="side front">
                             <div class="img-holder">
-                                <img src="Feature-1.jpg" alt="" id="height-subject">
+                                <img src="img/Feature-1.jpg" alt="" id="height-subject">
                             </div>
                             <div class="overlay"></div>
                             <div class="abstretch"><h3>Ground handling</h3></div>
@@ -237,7 +259,7 @@
                     <div class="box">
                         <div class="side front">
                             <div class="img-holder">
-                                <img src="Feature-4.jpg" alt="">
+                                <img src="img/Feature-4.jpg" alt="">
                             </div>
                             <div class="overlay"></div>
                             <div class="abstretch"><h3>Fleet</h3></div>
@@ -270,7 +292,7 @@
                     <div class="box">
                         <div class="side front">
                             <div class="img-holder">
-                                <img src="Feature-5.jpg" alt="">
+                                <img src="img/Feature-5.jpg" alt="">
                             </div>
                             <div class="overlay"></div>
                             <div class="abstretch"><h3>Airline</h3></div>
@@ -300,7 +322,7 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn-services">Read more</button>
+                <a href="services.html" class="button btn-type2">Read more</a>
             </div>
         </div>
     </section>
@@ -308,30 +330,71 @@
         <div class="container">
             <h2>Done exploring?</h2>
             <div class="btns-cover">
-                <button class="btn btn-2"><span><i class="fa-solid fa-phone"></i>Contact us</span></button>
+                <a href="contact.html" class="button btn btn-2"><span><i class="fa-solid fa-phone"></i>Contact us</span></a>
                 <button class="btn btn-3"><span><i class="fa-solid fa-paper-plane"></i>Send a revieew</span></button>
             </div>
         </div>
     </section>
+    <aside class="modal">
+        <div class="modal__box">
+            <div class="modal__left">
+                <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, excepturi!</h3>
+            </div>
+            <div class="modal__right">
+                <h3>Input your opinion</h3>
+                <div class="close">&Cross;</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur porro voluptatem 
+                    sit id facere vitae, eveniet iste debitis? Suscipit, quas?
+                </p>
+                <form class="modal__form">
+                    <div class="fullname">
+                        <div class="linput first-name">
+                            <label for="first-name" class="first-name-label">First Name</label>
+                            <input type="text" id="first-name">
+                        </div>
+                        <div class="linput last-name">
+                            <label for="last-name" class="last-name-label">Last Name</label>
+                            <input type="text" id="last-name">
+                        </div>
+                    </div>
+                    <div class="linput email">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="linput phone">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="linput message">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="send">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
     <footer>
         <div class="footer-bg">
             <div class="container footer-holder">
                 <ul class="f-list">
-                    <li>Menatours</li>
+                    <li><span class="ftheads">Menatours</span></li>
                     <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
                     <li><a href=""><i class="fa-solid fa-plane-up"></i>Corporate travel management</a></li>
                     <li><a href=""><i class="fa-solid fa-hotel"></i>Services</a></li>
                     <li><a href=""><i class="fa-solid fa-question"></i>About</a></li>
                 </ul>
                 <ul class="f-list">
-                    <li>Search</li>
+                    <li><span class="ftheads">Search</span></li>
                     <li class="search">
                         <input type="text" placeholder="Search...">
                         <label for=""><i class="fa-solid fa-search"></i></label>
                     </li>
                 </ul>
                 <ul class="f-list">
-                    <li>Menatours head office</li>
+                    <li><spam class="ftheads">Menatours head office</spam></li>
                     <li><a href="">El Nasr Bulding, Nile Street, Giza, Egypt</a></li>
                     <li><a href="">Phone: <span class="phone">+20 2 3748 2231</span></a></li>
                     <li><a href="">Fax: <span class="phone">+20 2 3335 4149</span></a></li>
@@ -339,7 +402,7 @@
                     <li><a href="">Web: <span>www.menatours.com.eg</span></a></li>
                 </ul>
                 <ul class="f-list subscribe">
-                    <li>Subscribe</li>
+                    <li><span class="ftheads">Subscribe</span></li>
                     <li>
                         <label for="email">Email Address</label>
                         <input type="email" placeholder="Enter your email">
@@ -368,7 +431,61 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        let animatableElementObjs = [
+            {
+                element: document.querySelector('.maincontainer'),
+                scrollPercentage: 0.7,
+                animationClass: 'fader',
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('.text-section-cover'),
+                scrollPercentage: 1,
+                animationClass: 'toUp',
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                elements: document.querySelectorAll('.section-holder .side'),
+                scrollPercentage: 0.5,
+                animationClass: 'slide',
+                type: 'fade',
+                repeat: 1,
+                isMulti: true
+            },
+            {
+                element: document.querySelector('.s4-wrapper'),
+                scrollPercentage: 0.2,
+                animationClass: 'boxAnim',
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('.contact-section'),
+                scrollPercentage: 0.4,
+                animationClass: 'conAnim',
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('footer'),
+                scrollPercentage: 0.2,
+                animationClass: 'footerAnim',
+                type: 'fade',
+                repeat: 2
+            },
+            {
+                element: document.querySelector('.copyrights'),
+                scrollPercentage: 0,
+                animationClass: 'copyrightAnim',
+                type: 'fade',
+                repeat: 2
+            }
+        ];
+    </script>
+    <script src="scrollanimation.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

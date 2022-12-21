@@ -1,0 +1,405 @@
+
+//          Logo
+#logo {
+    opacity: 0;
+    transform: translateY(-30%);
+}
+#logo.logo-animation {
+    opacity: 1;
+    transform: translateY(0);
+}
+#logo.transitions {
+    transition-property: opacity, transform;
+    transition-duration: .7s;
+}
+//          Main
+.maincontainer {
+    visibility: hidden;
+    opacity: 0;
+    h1 {
+        transform: translateY(15px);
+    }
+    h3 {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    a.button {
+        scale: .5;
+        opacity: 0;
+        transition: all 5s;
+    }
+}
+.maincontainer.fader {
+    visibility: visible;
+    opacity: 1;
+    h1 {
+        transform: translateY(0);
+    }
+    h3 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    a.button {
+        scale: 1;
+        opacity: 1;
+    }
+}
+.maincontainer.transitions {
+    transition: all 1.5s var(--timing-1);
+    h1, h3 {
+        transition: all 1.5s var(--timing-1);
+    }
+    a.button {
+        transition: all 1s .7s var(--timing-1);
+    }
+}
+//          Text Containers
+.section-holder .side {
+    img {
+        scale: .8;
+        opacity: 0;
+    }
+    .text-container::before {
+        width: 0%;
+    }
+    .text-container::after {
+        height: 0%;
+    }
+    h3, p, .mini-text {
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 1s ease-out;
+    }
+    .side-2 h3, .side-2 p {
+        transform: translateX(-20px);
+    }
+    .quoted i {
+        visibility: hidden;
+        transform: rotate(180deg) scale(.5);
+    }
+    // Services side 
+    ul li {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+}
+.section-holder .side.slide {
+    img {
+        scale: 1;
+        opacity: 1;
+    }
+    .text-container::before {
+        width: 50%;
+    }
+    .text-container::after {
+        height: 50%;
+    }
+    h3, p, .mini-text {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .side-2 h3, .side-2 p {
+        transform: translateX(0);
+    }
+    .quoted i {
+        visibility: visible;
+        transform: rotate(0) scale(1);
+    }
+    // Services side 
+    ul li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.section-holder .side.transitions {
+    img {
+        transition: all 1s var(--timing-1);
+    }
+    .text-container::before {
+        transition: all .5s .5s var(--timing-1);
+    }
+    .text-container::after {
+        transition: all .5s .5s var(--timing-1);
+    }
+    h3, p, .mini-text {
+        transition: all 1s ease-out;
+    }
+    .side-2 h3, .side-2 p {
+        transition: all .5s .5s var(--timing-1);
+    }
+    .quoted i {
+        transition: all .5s 1s var(--timing-1);
+    }
+    // Services side 
+    ul li {
+        transition: all .5s .4s ease-in-out;
+    }
+    ul li:first-child {
+        transition: all .5s .2s ease-in-out;
+    }
+    ul li:last-child {
+        transition: all .5s .6s ease-in-out;
+    }
+}
+//          Offices
+.text-section-cover {
+    h2 {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    p {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    a.button {
+        opacity: 0;
+        scale: .8;
+    }
+}
+.text-section-cover.toUp {
+    h2 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    a.button {
+        opacity: 1;
+        scale: 1;
+    }
+}
+.text-section-cover.transitions {
+    h2 {
+        transition: all 0.7s ease-out;
+    }
+    p {
+        transition: all .5s .2s ease-out;
+    }
+    a.button {
+        transition: all .5s .5s var(--timing-1);
+    }
+}
+//          Services
+.s4-wrapper {
+    .header {
+        h2 {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all 0.7s ease-out;
+        }
+        p {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: all .5s .2s ease-out;
+        }
+    }
+    .box {
+        opacity: 0;
+        scale: .8;
+    }
+    a.button {
+        opacity: 0;
+        scale: .8;
+        transition: all .5s .5s var(--timing-1);
+    }
+}
+.s4-wrapper.boxAnim {
+    .header {
+        h2 {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.7s ease-out;
+        }
+        p {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all .5s .2s ease-out;
+        }
+    }
+    .box {
+        opacity: 1;
+        scale: 1;
+    }
+    a.button {
+        opacity: 1;
+        scale: 1;
+        transition: all .3s 1s var(--timing-1);
+    }
+}
+//          Contact
+.contact-section {
+    h2 {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    a.button, button {
+        opacity: 0;
+        scale: .8;
+    }
+}
+.contact-section.conAnim {
+    h2 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    a.button, button {
+        opacity: 1;
+        scale: 1;
+    }
+}
+.contact-section.transitions {
+    h2 {
+        transition: all 0.7s ease-out;
+    }
+    a.button, button {
+        transition: all .5s 0.2s var(--timing-1);
+    }
+}
+//          Footer
+footer {
+    .ftheads {
+        position: relative;
+        z-index: 0;
+    }
+    .ftheads:before, .ftheads:after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        left: 0;
+        background: linear-gradient(-90deg, #0800 0%, var(--footer-bg-1) 30%);
+        z-index: 1;
+        transition: all 1s;
+    }
+    .ftheads:after {
+        left: auto;
+        right: 0;
+        background: linear-gradient(90deg,#0800 0%, var(--footer-bg-1) 30%);
+    }
+    li {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+footer.footerAnim {
+    .ftheads:before {
+        left: -80%;
+    }
+    .ftheads:after {
+        right: -80%;
+    }
+    li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.copyrights {
+    h6 {
+        position: relative;
+        z-index: 0;
+    }
+    h6::before, h6::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        left: 0;
+        background: linear-gradient(-90deg, #0800 0%, var(--footer-bg-2) 30%);
+        z-index: 1;
+        transition: all 1s;
+    }
+    h6::after {
+        left: auto;
+        right: 0;
+        background: linear-gradient(90deg,#0800 0%, var(--footer-bg-2) 30%);
+    }
+}
+.copyrights.copyrightAnim {
+    h6::before {
+        left: -80%;
+    }
+    h6::after {
+        right: -80%;
+    }
+}
+/********************************************
+                    SERVICES                *
+*********************************************
+*/
+.main-services {
+    h1 {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    .scrumb__box {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    .scrumb__icon {
+        opacity: 0;
+        scale: 0.5;
+        transition: all 1s cubic-bezier(0.600, 0.160, 0.355, 1.865);
+    }
+}
+.main-services.pop {
+    h1 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .scrumb__box {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all .3s;
+    }
+    .scrumb__icon {
+        opacity: 1;
+        scale: 1;
+    }
+}
+.main-services.transitions {
+    h1 {
+        transition: all 1.5s var(--timing-1);
+    }
+}
+//              Airline
+.airline__list {
+    opacity: 0;
+    transform: translateY(20px);
+    .airline__icon {
+        scale: .1;
+        border-radius: 50%;
+    }
+    p::after {
+        content: '';
+        position: absolute;
+        width: 130%;
+        height: 100%;
+        top: 0;
+        left: -30%;
+        z-index: 1;
+        background: linear-gradient(90deg,#0800 0%, var(--bg-color-2) 30%);
+    }
+}
+.airline__list.airmation {
+    opacity: 1;
+    transform: translateY(0);
+    .airline__icon {
+        scale: 1;
+        border-radius: 0;
+    }
+    p::after {
+        left: 100%;
+    }
+}
+.airline__list.transitions {
+    transition: all 1.5s var(--timing-1);
+    .airline__icon {
+        transition: all 1.5s var(--timing-1);
+    }
+    p::after {
+        transition: all 1.5s var(--timing-1);
+    }
+}

@@ -1,0 +1,81 @@
+header.ofcontact {
+    background-image: none;
+    height: auto;
+}
+.contact {
+    min-height: 100vh;
+    .modal__box {
+        transform: translateY(0);
+        width: 100%;
+        min-height: 100vh;
+        align-items: center;
+        grid-template-columns: minmax(400px, 1fr) 2fr;
+        & > div {
+            padding: 15vh 60px;
+            height: 100%;
+            width: 100%;
+        }
+        p {
+            margin: initial;
+            margin-bottom: 30px;
+        }
+        .modal__left {
+            display: block;
+            .contact__details {
+                display: flex;
+                flex-direction: column;
+                margin-top: 90px;
+                row-gap: 15px;
+                align-items: center;
+                .contact__item {
+                    color: var(--tx-color-1);
+                    background-color: var(--bg-color-1);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    column-gap: 15px;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    max-width: 400px;
+                    width: 100%;
+                    transition: color .2s;
+                    &:hover {
+                        color: #f29858;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            .modal__right {
+                padding: 0;
+                max-width: 800px;
+                .close {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact .modal__box {
+        grid-template-columns: 1fr;
+        .modal__left {
+            grid-row: 2/3;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .contact .modal__box {
+        & > div {
+            padding: 10vh 20px;
+        }
+        .contact__item {
+            font-size: 14px;
+        }
+    }
+}
