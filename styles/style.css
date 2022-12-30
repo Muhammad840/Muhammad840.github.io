@@ -2205,6 +2205,14 @@ header.ofcontact {
     font-size: 14px;
   }
 }
+:root {
+  --navbar-solid-color: ;
+}
+
+.discover {
+  background-image: none;
+}
+
 .iti__flag {
   background-image: url("../assets/intl-tel-input-master/build/img/flags.png");
 }
