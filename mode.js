@@ -1,10 +1,18 @@
 const switchers = document.querySelectorAll('.switch__control')
 const root = document.querySelector(':root')
 let light_on = true
+let navBright = false
 
 switchers.forEach(switcher => switcher.addEventListener('click', switchmode))
-if (localStorage.getItem('mode') === 'dark') 
+if (localStorage.getItem('mode') === 'dark') {
     switchmode();
+}
+else {
+    if (document.querySelector('.flatNav')) {
+        document.querySelector('.flatNav').classList.add('bright-nav')
+        navBright = true
+    }
+}
 
     root.style.setProperty('--loader-bg', 'white')
 function switchmode() {
@@ -25,6 +33,9 @@ function switchmode() {
         root.style.setProperty('--input-color', 'rgb(223, 226, 231)')
         root.style.setProperty('--input-color-2', 'rgb(40, 40, 40)')
         root.style.setProperty('--shadow-1', '0px 0px 20px 5px rgb(255 255 255 / 4%)')
+        if (document.querySelector('nav.bright-nav')) 
+            document.querySelector('nav.flatNav').classList.remove('bright-nav')
+        navBright = false
         light_on = false;
         localStorage.setItem('mode', 'dark')
     }
@@ -40,9 +51,12 @@ function switchmode() {
         root.style.setProperty('--input-color', '#777')
         root.style.setProperty('--input-color-2', 'rgb(55, 60, 80)')
         root.style.setProperty('--shadow-1', '0px 0px 20px 5px rgb(0 0 0 / 7%)')
+        if (document.querySelector('nav.flatNav')) 
+            document.querySelector('nav.flatNav').classList.add('bright-nav')
+        navBright = true
         light_on = true;
         localStorage.setItem('mode', 'light')
     }
 }
 
-export {switchers, root, light_on, switchmode}
+export {switchers, root, light_on, switchmode, navBright}

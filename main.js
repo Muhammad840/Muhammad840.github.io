@@ -72,21 +72,24 @@ miniDropdowns.forEach(miniDropdown => {
     })
 })
 
-dropdowns.forEach(dropdown => {
-    Array.from(dropdown.children).filter(child => child.nodeName === "LI").forEach(child => {
-        child.addEventListener('mouseenter', () => {
-            Array.from(child.children).filter(link => link.nodeName === "A").forEach(link => {
-                link.style.cssText += "background-color: rgba(0, 0, 0, 0.8); color: rgb(253, 102, 2)"
+import {switchmode, navBright} from './mode.js'
+
+if (navBright === false) {
+    dropdowns.forEach(dropdown => {
+        Array.from(dropdown.children).filter(child => child.nodeName === "LI").forEach(child => {
+            child.addEventListener('mouseenter', () => {
+                Array.from(child.children).filter(link => link.nodeName === "A").forEach(link => {
+                    link.style.cssText += "background-color: rgba(0, 0, 0, 0.8);"
+                })
             })
-        })
-        child.addEventListener('mouseleave', () => {
-            Array.from(child.children).filter(link => link.nodeName === "A").forEach(link => {
-                link.style.cssText += "background-color: rgba(0, 0, 0, 0.4); color: rgb(255, 255, 255)"
+            child.addEventListener('mouseleave', () => {
+                Array.from(child.children).filter(link => link.nodeName === "A").forEach(link => {
+                    link.style.cssText += "background-color: rgba(0, 0, 0, 0.4);"
+                })
             })
         })
     })
-})
-import {switchmode} from './mode.js'
+}
 
 /*                          SCHEME SWITCH */
 // const switchers = document.querySelectorAll('.switch__control')
@@ -161,15 +164,19 @@ function scrollWatch() {
         const scrolled = window.scrollY
         if (menuOpened === false) {
             console.log(menuOpened)
-            document.querySelector('.nav').style.backgroundColor = "rgba(0 ,0 ,0, 0.4)"
-            /*
-            if (scrolled > 100) {
-                document.querySelector('.nav').style.backgroundColor = "rgba(0 ,0 ,0, 0.4)"
+            if (document.querySelector('.flatNav')) {
+                if (!navBright) {
+                    if (scrolled > 100) {
+                        document.querySelector('.nav').style.backgroundColor = "rgba(0 ,0 ,0, 0.4)"
+                    }
+                    else {
+                        document.querySelector('.nav').style.backgroundColor = "transparent"
+                    }
+                }
             }
             else {
-                document.querySelector('.nav').style.backgroundColor = "transparent"
+                document.querySelector('.nav').style.backgroundColor = "rgba(0 ,0 ,0, 0.4)"
             }
-            */
         }
     }
 }

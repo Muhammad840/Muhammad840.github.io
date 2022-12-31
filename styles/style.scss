@@ -194,9 +194,9 @@ nav {
     transition: background 0.5s;
 }
 
-.right-nav > li:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-}
+// .right-nav > li:hover {
+//     background-color: rgba(0, 0, 0, 0.4);
+// }
 
 @keyframes nav-li {
     0% {
@@ -221,7 +221,7 @@ nav {
 
 .right-nav a:hover {
     color: rgb(253, 102, 2);
-    text-shadow: 1px 02px 2px rgba(43, 31, 1, 0.788);
+    // text-shadow: 1px 02px 2px rgba(43, 31, 1, 0.788);
 } 
 
 nav .switch {
@@ -245,6 +245,9 @@ nav .switch {
             top: 3px;
             opacity: 1;
             transition: all .3s;
+            &:last-child {
+                color: var(--bg-color-1);
+            }
         }
         .off {
             opacity: 0;
