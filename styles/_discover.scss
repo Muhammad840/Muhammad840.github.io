@@ -4,6 +4,7 @@
 
 .discover {
     background-image: none;
+    height: var(--nav-height);
     nav.flatNav {
         background-color: var(--bg-color-1);
         color: var(--tx-color-1);
@@ -40,6 +41,27 @@
             .mini-dropdown {
                 box-shadow: 0px 10px 10px rgba(255, 102, 0, 0.212);
             }
+        }
+    }
+}
+
+.discover-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 60px 0;
+    .collapsible {
+        padding: 0;
+        margin: 0;
+        background-color: var(--bg-color-2);
+        max-width: 340px;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .discover__content {
+        padding: 0 60px;
+        h2 {
+            text-align: left;
         }
     }
 }

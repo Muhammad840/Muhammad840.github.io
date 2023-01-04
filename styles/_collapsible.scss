@@ -1,0 +1,30 @@
+:root {
+  --collapsible-vpadding: 15px;
+}
+.collapsible-header {
+  position: relative;
+  padding: var(--collapsible-vpadding) 20px;
+}
+
+.collapsible-body {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 20px;
+  transition: height .3s, padding .3s;
+}
+
+.collapsible-padding {
+  padding: var(--collapsible-vpadding) 20px;
+}
+
+.collapsed {
+  position: absolute;
+  visibility: hidden;
+}
+
+.collapsible-body.expanded {
+  height: 90px;
+  visibility: visible;
+  position: relative;
+}

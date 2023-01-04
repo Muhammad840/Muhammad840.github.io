@@ -4,6 +4,7 @@
 
 .discover {
   background-image: none;
+  height: var(--nav-height);
 }
 .discover nav.flatNav {
   background-color: var(--bg-color-1);

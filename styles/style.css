@@ -2204,11 +2204,44 @@ header.ofcontact {
   }
 }
 :root {
+  --collapsible-vpadding: 15px;
+}
+
+.collapsible-header {
+  position: relative;
+  padding: var(--collapsible-vpadding) 20px;
+}
+
+.collapsible-body {
+  height: 0;
+  overflow: hidden;
+  position: relative;
+  padding: 0px 20px;
+  transition: height 0.3s, padding 0.3s;
+}
+
+.collapsible-padding {
+  padding: var(--collapsible-vpadding) 20px;
+}
+
+.collapsed {
+  position: absolute;
+  visibility: hidden;
+}
+
+.collapsible-body.expanded {
+  height: 90px;
+  visibility: visible;
+  position: relative;
+}
+
+:root {
   --navbar-solid-color: ;
 }
 
 .discover {
   background-image: none;
+  height: var(--nav-height);
 }
 .discover nav.flatNav {
   background-color: var(--bg-color-1);
@@ -2245,6 +2278,27 @@ header.ofcontact {
 }
 .discover nav.flatNav.bright-nav .dropdown .mini-dropdown {
   box-shadow: 0px 10px 10px rgba(255, 102, 0, 0.212);
+}
+
+.discover-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 60px 0;
+}
+.discover-container .collapsible {
+  padding: 0;
+  margin: 0;
+  background-color: var(--bg-color-2);
+  max-width: 340px;
+}
+.discover-container .collapsible i {
+  margin-right: 10px;
+}
+.discover-container .discover__content {
+  padding: 0 60px;
+}
+.discover-container .discover__content h2 {
+  text-align: left;
 }
 
 .iti__flag {
