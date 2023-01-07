@@ -1,20 +1,31 @@
 :root {
-  --collapsible-vpadding: 15px;
+  --collapsible-vpadding: 12px;
 }
 .collapsible-header {
   position: relative;
-  padding: var(--collapsible-vpadding) 20px;
+  display: flex;
+  span {
+    display: inline-block;
+    flex: auto;
+    padding: var(--collapsible-vpadding) 20px;
+  }
+  span.referencer {
+    padding-left: 0;
+  }
 }
 
 .collapsible-body {
   height: 0;
   overflow: hidden;
   position: relative;
-  padding: 0px 20px;
   transition: height .3s, padding .3s;
+  .collapse-item {
+    transition: padding .3s;
+    padding: 0px 20px;
+  }
 }
 
-.collapsible-padding {
+.collapsible-body .collapse-item.collapsible-padding {
   padding: var(--collapsible-vpadding) 20px;
 }
 

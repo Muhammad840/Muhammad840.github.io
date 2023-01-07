@@ -201,7 +201,8 @@ menu.addEventListener("click", () => {
     menu.classList.toggle("active");
     hamburger.classList.toggle("trans")
     if (menuOpened === false) {
-        nav.style.backgroundColor = "rgba(0 ,0 ,0, 0.8)"
+        if (navBright === false)
+            nav.style.backgroundColor = "rgba(0 ,0 ,0, 0.8)";
         nav.style.minHeight = itemHeight*iCount + iPadding*2 + 64 + "px"
         hamburger.style.maxHeight = itemHeight*iCount + "px"
         menuOpened = true

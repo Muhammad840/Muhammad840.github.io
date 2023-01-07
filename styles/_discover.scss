@@ -42,6 +42,9 @@
                 box-shadow: 0px 10px 10px rgba(255, 102, 0, 0.212);
             }
         }
+        .menu span {
+            background: var(--tx-color-1);
+        }
     }
 }
 
@@ -50,12 +53,22 @@
     grid-template-columns: auto 1fr;
     padding: 60px 0;
     .collapsible {
-        padding: 0;
+        padding: 12px 0;
         margin: 0;
         background-color: var(--bg-color-2);
         max-width: 340px;
         i {
-            margin-right: 10px;
+            padding: var(--collapsible-vpadding) 20px;
+            padding-right: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .collapse-item {
+            padding-left: 44px !important;
+            &:hover {
+                cursor: pointer;
+                background-color: rgba(0,0,0, .1);
+            }
         }
     }
     .discover__content {

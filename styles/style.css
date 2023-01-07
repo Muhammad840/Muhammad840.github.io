@@ -2204,23 +2204,34 @@ header.ofcontact {
   }
 }
 :root {
-  --collapsible-vpadding: 15px;
+  --collapsible-vpadding: 12px;
 }
 
 .collapsible-header {
   position: relative;
+  display: flex;
+}
+.collapsible-header span {
+  display: inline-block;
+  flex: auto;
   padding: var(--collapsible-vpadding) 20px;
+}
+.collapsible-header span.referencer {
+  padding-left: 0;
 }
 
 .collapsible-body {
   height: 0;
   overflow: hidden;
   position: relative;
-  padding: 0px 20px;
   transition: height 0.3s, padding 0.3s;
 }
+.collapsible-body .collapse-item {
+  transition: padding 0.3s;
+  padding: 0px 20px;
+}
 
-.collapsible-padding {
+.collapsible-body .collapse-item.collapsible-padding {
   padding: var(--collapsible-vpadding) 20px;
 }
 
@@ -2279,6 +2290,9 @@ header.ofcontact {
 .discover nav.flatNav.bright-nav .dropdown .mini-dropdown {
   box-shadow: 0px 10px 10px rgba(255, 102, 0, 0.212);
 }
+.discover nav.flatNav.bright-nav .menu span {
+  background: var(--tx-color-1);
+}
 
 .discover-container {
   display: grid;
@@ -2286,13 +2300,23 @@ header.ofcontact {
   padding: 60px 0;
 }
 .discover-container .collapsible {
-  padding: 0;
+  padding: 12px 0;
   margin: 0;
   background-color: var(--bg-color-2);
   max-width: 340px;
 }
 .discover-container .collapsible i {
-  margin-right: 10px;
+  padding: var(--collapsible-vpadding) 20px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.discover-container .collapsible .collapse-item {
+  padding-left: 44px !important;
+}
+.discover-container .collapsible .collapse-item:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .discover-container .discover__content {
   padding: 0 60px;

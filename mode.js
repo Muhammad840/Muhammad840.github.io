@@ -51,8 +51,10 @@ function switchmode() {
         root.style.setProperty('--input-color', '#777')
         root.style.setProperty('--input-color-2', 'rgb(55, 60, 80)')
         root.style.setProperty('--shadow-1', '0px 0px 20px 5px rgb(0 0 0 / 7%)')
-        if (document.querySelector('nav.flatNav')) 
+        if (document.querySelector('nav.flatNav')) {
             document.querySelector('nav.flatNav').classList.add('bright-nav')
+            document.querySelector('nav.flatNav').style.backgroundColor = ''
+        }
         navBright = true
         light_on = true;
         localStorage.setItem('mode', 'light')

@@ -11,18 +11,30 @@ let Ostatus = []
 //     })
 // })
 headers.forEach((header, i) => {
-    header.addEventListener('click', () => {
+    header.firstElementChild.addEventListener('click', () => {
         console.log('bonga', header.nextElementSibling.getBoundingClientRect().height)
         if (header.nextElementSibling.getBoundingClientRect().height === 0) {
             const vpadding = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--collapsible-vpadding'))
             console.log(vpadding)
-            header.nextElementSibling.style.height = (header.nextElementSibling.scrollHeight + vpadding*2) + 'px'
-            header.nextElementSibling.classList.add('collapsible-padding')
+            //header.nextElementSibling.style.height = (header.nextElementSibling.scrollHeight + vpadding*2) + 'px'
+            //header.nextElementSibling.classList.add('collapsible-padding')
+            let items = Array.from(header.nextElementSibling.children)
+            items.forEach(item => {
+                if (item.className.includes('collapse-item')) {
+                    item.classList.add('collapsible-padding')
+                }
+            })
+            header.nextElementSibling.style.height = (header.nextElementSibling.scrollHeight + vpadding*items.length*2) + 'px'
             header.classList.add('expanded')
         }
         else {
+            //header.nextElementSibling.classList.remove('collapsible-padding')
+            Array.from(header.nextElementSibling.children).forEach(item => {
+                if (item.className.includes('collapse-item')) {
+                    item.classList.remove('collapsible-padding')
+                }
+            })
             header.nextElementSibling.style.height = '0px'
-            header.nextElementSibling.classList.remove('collapsible-padding')
             header.classList.remove('expanded')
         }
     })
