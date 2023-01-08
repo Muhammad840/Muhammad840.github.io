@@ -387,3 +387,38 @@ function transitionResetter(element) {
     }
     return InnerRes
 }
+
+/***********************************************
+            Discover Links & Sections          *
+************************************************
+*/
+
+function goToSection(chosenName) {
+    if (document.URL.includes('discover')) {
+        if (document.querySelector('.active-content')) {
+            document.querySelector('.active-content').classList.remove('active-content')
+        }
+        console.log(chosenName, '.content__' + chosenName)
+        document.querySelector('.content__' + chosenName).classList.add('active-content')
+    }
+    else {
+        window.location.href = 'discover.html?name="' + chosenName + '"'
+    }
+}
+
+document.querySelectorAll('.discovertrig li').forEach(li => {
+    li.addEventListener('click', () => {
+        if (document.querySelector('.content__' + li.id))
+        goToSection(li.id)
+    })
+})
+
+if (document.URL.includes('discover')) {
+    document.querySelectorAll('.collapse-item').forEach(item => {
+        item.addEventListener('click', () => {
+            if (document.querySelector('.content__' + item.classList[1])) {
+                goToSection(item.classList[1])
+            }
+        })
+    })
+}

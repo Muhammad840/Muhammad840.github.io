@@ -237,6 +237,7 @@ nav {
 
 .right-nav a:hover {
   color: rgb(253, 102, 2);
+  cursor: pointer;
 }
 
 nav .switch {
@@ -2320,9 +2321,32 @@ header.ofcontact {
 }
 .discover-container .discover__content {
   padding: 0 60px;
+  padding-bottom: 30px;
+  position: relative;
+}
+.discover-container .discover__content img.layered, .discover-container .discover__content .layered-color {
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -2;
+  position: absolute;
+}
+.discover-container .discover__content .layered-color {
+  width: 100%;
+  z-index: -1;
+  background-color: var(--bg-color-1);
+  opacity: 0.9;
 }
 .discover-container .discover__content h2 {
   text-align: left;
+}
+.discover-container .discover__content .content__face {
+  visibility: hidden;
+  display: none;
+}
+.discover-container .discover__content .active-content {
+  display: block;
+  visibility: visible;
 }
 
 .iti__flag {
