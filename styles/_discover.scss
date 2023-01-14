@@ -57,6 +57,7 @@
         margin: 0;
         background-color: var(--bg-color-2);
         max-width: 340px;
+        font-family: 'Inter';
         i {
             padding: var(--collapsible-vpadding) 20px;
             padding-right: 10px;
@@ -64,10 +65,15 @@
             align-items: center;
         }
         .collapse-item {
-            padding-left: 44px !important;
+            padding-left: 44px;
             &:hover {
                 cursor: pointer;
                 background-color: rgba(0,0,0, .1);
+            }
+        }
+        .collapsible-header {
+            .collapse-item {
+                padding-left: 20px;
             }
         }
     }
@@ -75,6 +81,7 @@
         padding: 0 60px;
         padding-bottom: 30px;
         position: relative;
+        overflow: hidden;
         img.layered, .layered-color {
             height: 100%;
             left: 0;

@@ -29,7 +29,6 @@ dropdowns.forEach(dropdown => {
 
 document.querySelectorAll('.trig').forEach(trig => {
     trig.addEventListener('mouseenter', () => {
-        console.log("In")
         Array.from(trig.children).filter(dropdown => dropdown.nodeName === "UL").forEach((dropdown, ii) => {
             dropdown.style.cssText = "display: flex;"
             Array.from(dropdown.children).forEach((child, i) => {
@@ -41,7 +40,6 @@ document.querySelectorAll('.trig').forEach(trig => {
         })
     })
     trig.addEventListener('mouseleave', () => {
-        console.log("Out")
         Array.from(trig.children).filter(dropdown => dropdown.nodeName === "UL").forEach((dropdown, ii) => {
             dropdown.style.cssText = "display: none;"
             Array.from(dropdown.children).forEach((child, i) => {
@@ -53,10 +51,8 @@ document.querySelectorAll('.trig').forEach(trig => {
 })
 
 let miniDropdowns = document.querySelectorAll('.mini-dropdown')
-console.log(miniDropdowns)
 miniDropdowns.forEach(miniDropdown => {
     miniDropdown.parentElement.addEventListener('mouseenter', () => {
-        console.log(miniDropdown.parentElement)
         miniDropdown.style.display = "flex"
         Array.from(miniDropdown.children).filter(chiild => chiild.nodeName === "LI").forEach(chiild => {
             chiild.style.display = "flex"
@@ -237,7 +233,6 @@ document.querySelectorAll('.item').forEach(item => {
             const miniHeight = Array.from(item.nextElementSibling.children).length * itemHeight
             if (item.className.includes('opened')) {
                 miniOpened += 1
-                console.log(miniHeight)
                 item.nextElementSibling.style.height = miniHeight + 'px'
                 nav.style.minHeight = navObj.height + miniHeight + 'px'
                 Array.from(item.children).forEach(child => {
@@ -337,7 +332,6 @@ window.addEventListener('load', () => {
     //  Flip cards transition
     if (document.querySelector('.boxes')) {
         Array.from(document.querySelector('.boxes').children).forEach((box, i) => {
-            console.log(box)
             box.style.transition = 'all 0.5s ' + ((i*0.1) + 0.1) + 's ease-out'
         })
     }
@@ -381,7 +375,6 @@ window.addEventListener('load', () => {
 
 function transitionResetter(element) {
     function InnerRes() {
-        console.log(element)
         element.style.transition = ''
         element.removeEventListener('transitionend', transitionResetter)
     }
@@ -395,11 +388,13 @@ function transitionResetter(element) {
 
 function goToSection(chosenName) {
     if (document.URL.includes('discover')) {
-        if (document.querySelector('.active-content')) {
-            document.querySelector('.active-content').classList.remove('active-content')
+        if (document.querySelector('.content__' + chosenName)) {
+            if (document.querySelector('.active-content')) {
+                document.querySelector('.active-content').classList.remove('active-content')
+            }
+            console.log(chosenName, '.content__' + chosenName)
+            document.querySelector('.content__' + chosenName).classList.add('active-content')
         }
-        console.log(chosenName, '.content__' + chosenName)
-        document.querySelector('.content__' + chosenName).classList.add('active-content')
     }
     else {
         window.location.href = 'discover.html?name="' + chosenName + '"'
@@ -408,17 +403,10 @@ function goToSection(chosenName) {
 
 document.querySelectorAll('.discovertrig li').forEach(li => {
     li.addEventListener('click', () => {
-        if (document.querySelector('.content__' + li.id))
+        if (!li.className.includes('click-disabled'))
         goToSection(li.id)
     })
 })
 
-if (document.URL.includes('discover')) {
-    document.querySelectorAll('.collapse-item').forEach(item => {
-        item.addEventListener('click', () => {
-            if (document.querySelector('.content__' + item.classList[1])) {
-                goToSection(item.classList[1])
-            }
-        })
-    })
-}
+
+export {goToSection} 

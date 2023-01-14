@@ -2305,6 +2305,7 @@ header.ofcontact {
   margin: 0;
   background-color: var(--bg-color-2);
   max-width: 340px;
+  font-family: "Inter";
 }
 .discover-container .collapsible i {
   padding: var(--collapsible-vpadding) 20px;
@@ -2313,16 +2314,20 @@ header.ofcontact {
   align-items: center;
 }
 .discover-container .collapsible .collapse-item {
-  padding-left: 44px !important;
+  padding-left: 44px;
 }
 .discover-container .collapsible .collapse-item:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
 }
+.discover-container .collapsible .collapsible-header .collapse-item {
+  padding-left: 20px;
+}
 .discover-container .discover__content {
   padding: 0 60px;
   padding-bottom: 30px;
   position: relative;
+  overflow: hidden;
 }
 .discover-container .discover__content img.layered, .discover-container .discover__content .layered-color {
   height: 100%;
