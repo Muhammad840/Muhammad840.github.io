@@ -326,14 +326,16 @@ ul.mini-items {
     @include transit;
 }
 
-.item {
-    display: flex;
-    justify-content: space-between;
-}
 
 .item, .mini-item {
     width: 100%;
     padding: 15px 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submini-items, .submini-items i {
+    @include transit;
 }
 
 .item i {

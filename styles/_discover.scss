@@ -72,9 +72,22 @@
             }
         }
         .collapsible-header {
+            position: relative;
             .collapse-item {
                 padding-left: 20px;
             }
+            &::after {
+                content: '';
+                top: 0;
+                left: 20px;
+                position: absolute;
+                width: calc(100% - 40px);
+                height: 1px;
+                background-color: rgba(134, 134, 134, 0.425);
+            }
+        }
+        li:first-child .collapsible-header::after {
+            height: 0;
         }
     }
     .discover__content {

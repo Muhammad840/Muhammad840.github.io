@@ -341,14 +341,16 @@ ul.mini-items {
   transition-duration: 0.5s;
 }
 
-.item {
+.item, .mini-item {
+  width: 100%;
+  padding: 15px 5px;
   display: flex;
   justify-content: space-between;
 }
 
-.item, .mini-item {
-  width: 100%;
-  padding: 15px 5px;
+.submini-items, .submini-items i {
+  transition-property: all;
+  transition-duration: 0.5s;
 }
 
 .item i {
@@ -2320,8 +2322,23 @@ header.ofcontact {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.1);
 }
+.discover-container .collapsible .collapsible-header {
+  position: relative;
+}
 .discover-container .collapsible .collapsible-header .collapse-item {
   padding-left: 20px;
+}
+.discover-container .collapsible .collapsible-header::after {
+  content: "";
+  top: 0;
+  left: 20px;
+  position: absolute;
+  width: calc(100% - 40px);
+  height: 1px;
+  background-color: rgba(134, 134, 134, 0.425);
+}
+.discover-container .collapsible li:first-child .collapsible-header::after {
+  height: 0;
 }
 .discover-container .discover__content {
   padding: 0 60px;

@@ -217,6 +217,16 @@ menu.addEventListener("click", () => {
                 item.classList.remove('opened')
             }
         })
+        document.querySelectorAll('.mini-item').forEach(miniItem => {
+            if (miniItem.className.includes('opened')) {
+                miniItem.classList.remove('opened')
+                const parentHeight = miniItem.parentElement.style.height
+                //miniItem.parentElement.style.height = (parseInt(parentHeight.substring(0 ,parentHeight.length -2)) - miniHeight) + 'px'
+                miniItem.parentElement.style.height = 0
+                miniItem.nextElementSibling.style.height = 0
+                miniItem.nextElementSibling.classList.add('trans')
+            }
+        })
         if (document.querySelector('.rt-90')) {
             document.querySelectorAll('.rt-90').forEach(rt => rt.classList.remove('rt-90'))
         }
@@ -231,9 +241,10 @@ document.querySelectorAll('.item').forEach(item => {
             item.nextElementSibling.classList.toggle('trans')
             item.classList.toggle('opened')
             const miniHeight = Array.from(item.nextElementSibling.children).length * itemHeight
+            const miniItemHeight = Array.from(item.nextElementSibling.children).filter(mini => mini.className.includes('submini-items')).length * itemHeight
             if (item.className.includes('opened')) {
                 miniOpened += 1
-                item.nextElementSibling.style.height = miniHeight + 'px'
+                item.nextElementSibling.style.height = miniHeight - miniItemHeight + 'px'
                 nav.style.minHeight = navObj.height + miniHeight + 'px'
                 Array.from(item.children).forEach(child => {
                     if (child.className.includes('fa-chevron-left')) {
@@ -246,6 +257,40 @@ document.querySelectorAll('.item').forEach(item => {
                 item.nextElementSibling.style.height = '0px'
                 nav.style.minHeight = navObj.height - miniHeight + 'px'
                 Array.from(item.children).forEach(child => {
+                    if (child.className.includes('fa-chevron-left')) {
+                        child.classList.remove('rt-90')
+                    }
+                })
+            }
+        }
+    })
+})
+
+document.querySelectorAll('.mini-item').forEach(mini => {
+    mini.addEventListener('click', () => {
+        if (mini.nextElementSibling && mini.nextElementSibling.className.includes('submini-items')) {
+            mini.nextElementSibling.classList.toggle('trans')
+            mini.classList.toggle('opened')
+            const miniHeight = Array.from(mini.nextElementSibling.children).length * itemHeight
+            if (mini.className.includes('opened')) {
+                miniOpened += 1
+                mini.nextElementSibling.style.height = miniHeight + 'px'
+                const parentHeight = mini.parentElement.style.height
+                mini.parentElement.style.height = (parseInt(parentHeight.substring(0 ,parentHeight.length -2)) + miniHeight) + 'px'
+                nav.style.minHeight = navObj.height + miniHeight + 'px'
+                Array.from(mini.children).forEach(child => {
+                    if (child.className.includes('fa-chevron-left')) {
+                        child.classList.add('rt-90')
+                    }
+                })
+            }
+            else {
+                miniOpened -= 1
+                mini.nextElementSibling.style.height = '0px'
+                const parentHeight = mini.parentElement.style.height
+                mini.parentElement.style.height = (parseInt(parentHeight.substring(0 ,parentHeight.length -2)) - miniHeight) + 'px'
+                nav.style.minHeight = navObj.height - miniHeight + 'px'
+                Array.from(mini.children).forEach(child => {
                     if (child.className.includes('fa-chevron-left')) {
                         child.classList.remove('rt-90')
                     }
