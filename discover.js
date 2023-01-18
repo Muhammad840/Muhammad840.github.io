@@ -32,3 +32,7 @@ document.querySelectorAll('.collapsible-header').forEach(header => {
         })
     }
 })
+
+document.querySelector('.tags-swiper').addEventListener('click', () => {
+    document.querySelector('.collapsible').classList.toggle('swiped')
+})

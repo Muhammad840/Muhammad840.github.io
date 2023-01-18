@@ -348,6 +348,10 @@ ul.mini-items {
   justify-content: space-between;
 }
 
+.submini-items {
+  height: 0;
+}
+
 .submini-items, .submini-items i {
   transition-property: all;
   transition-duration: 0.5s;
@@ -2340,6 +2344,31 @@ header.ofcontact {
 .discover-container .collapsible li:first-child .collapsible-header::after {
   height: 0;
 }
+.discover-container .collapsible .tags-swiper {
+  position: absolute;
+  display: flex;
+  place-items: center;
+  padding: 15px 20px;
+  right: -50px;
+  top: 125px;
+  background-color: var(--bg-color-2);
+}
+.discover-container .collapsible .tags-swiper i {
+  padding: 0;
+}
+.discover-container .collapsible .tags-swiper .blurer {
+  width: 100vw;
+  height: 200vh;
+  position: absolute;
+  top: -50vh;
+  z-index: 4;
+  right: calc(-100vw + 50px);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
 .discover-container .discover__content {
   padding: 0 60px;
   padding-bottom: 30px;
@@ -2371,6 +2400,26 @@ header.ofcontact {
   visibility: visible;
 }
 
+@media (max-width: 1024px) {
+  .discover-container {
+    position: relative;
+  }
+  .discover-container .collapsible {
+    position: fixed;
+    left: -263px;
+    z-index: 5;
+    top: 0;
+    height: 100vh;
+    transition: left 0.3s;
+  }
+  .discover-container .collapsible.swiped {
+    left: 0;
+  }
+  .discover-container .collapsible.swiped .blurer {
+    visibility: visible;
+    opacity: 1;
+  }
+}
 .iti__flag {
   background-image: url("../assets/intl-tel-input-master/build/img/flags.png");
 }

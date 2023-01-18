@@ -448,8 +448,12 @@ function goToSection(chosenName) {
 
 document.querySelectorAll('.discovertrig li').forEach(li => {
     li.addEventListener('click', () => {
-        if (!li.className.includes('click-disabled'))
-        goToSection(li.id)
+        if (!li.className.includes('click-disabled')) {
+            if (li.closest('.ham')) {
+                goToSection(li.classList[1])
+            }
+            else goToSection(li.id)
+        }
     })
 })
 

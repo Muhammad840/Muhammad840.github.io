@@ -89,6 +89,30 @@
         li:first-child .collapsible-header::after {
             height: 0;
         }
+        .tags-swiper {
+            position: absolute;
+            display: flex;
+            place-items: center;
+            padding: 15px 20px;
+            right: -50px;
+            top: 125px;
+            background-color: var(--bg-color-2);
+            i {
+                padding: 0;
+            }
+            .blurer {
+                width: 100vw;
+                height: 200vh;
+                position: absolute;
+                top: -50vh;
+                z-index: 4;
+                right: calc(-100vw + 50px);
+                backdrop-filter: blur(5px);
+                visibility: hidden;
+                opacity: 0;
+                transition: all .3s;
+            }
+        }
     }
     .discover__content {
         padding: 0 60px;
@@ -118,6 +142,27 @@
         .active-content {
             display: block;
             visibility: visible;
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .discover-container {
+        position: relative;
+        .collapsible {
+            position: fixed;
+            left: -263px;
+            z-index: 5;
+            top: 0;
+            height: 100vh;
+            transition: left .3s;
+        }
+        .collapsible.swiped {
+            left: 0;
+            .blurer {
+                visibility: visible;
+                opacity: 1;
+            }
         }
     }
 }

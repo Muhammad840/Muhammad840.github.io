@@ -334,6 +334,10 @@ ul.mini-items {
     justify-content: space-between;
 }
 
+.submini-items {
+    height: 0;
+}
+
 .submini-items, .submini-items i {
     @include transit;
 }
