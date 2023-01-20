@@ -357,7 +357,7 @@ ul.mini-items {
   transition-duration: 0.5s;
 }
 
-.item i {
+.item i, .mini-item i {
   transition: transform 0.5s;
 }
 
@@ -1236,7 +1236,7 @@ footer li:first-child {
   transition: all 0.5s 0.5s var(--timing-1);
 }
 .section-holder .side.transitions .quoted i {
-  transition: all 0.5s 1s var(--timing-1);
+  transition: all 0.5s 0.9s var(--timing-1);
 }
 .section-holder .side.transitions ul li {
   transition: all 0.5s 0.4s ease-in-out;
@@ -2341,12 +2341,15 @@ header.ofcontact {
   height: 1px;
   background-color: rgba(134, 134, 134, 0.425);
 }
+.discover-container .collapsible .collapsible-header .referencer:hover {
+  cursor: default;
+}
 .discover-container .collapsible li:first-child .collapsible-header::after {
   height: 0;
 }
 .discover-container .collapsible .tags-swiper {
+  display: none;
   position: absolute;
-  display: flex;
   place-items: center;
   padding: 15px 20px;
   right: -50px;
@@ -2391,6 +2394,13 @@ header.ofcontact {
 .discover-container .discover__content h2 {
   text-align: left;
 }
+.discover-container .discover__content ul li {
+  list-style: disc;
+  font-size: 16px;
+  font-family: "Inter";
+  line-height: 1.4;
+  padding-bottom: 8px;
+}
 .discover-container .discover__content .content__face {
   visibility: hidden;
   display: none;
@@ -2406,11 +2416,14 @@ header.ofcontact {
   }
   .discover-container .collapsible {
     position: fixed;
-    left: -263px;
+    left: -264px;
     z-index: 5;
     top: 0;
     height: 100vh;
     transition: left 0.3s;
+  }
+  .discover-container .collapsible .tags-swiper {
+    display: flex;
   }
   .discover-container .collapsible.swiped {
     left: 0;

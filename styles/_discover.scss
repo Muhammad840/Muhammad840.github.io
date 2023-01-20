@@ -85,13 +85,16 @@
                 height: 1px;
                 background-color: rgba(134, 134, 134, 0.425);
             }
+            .referencer:hover {
+                cursor: default;
+            }
         }
         li:first-child .collapsible-header::after {
             height: 0;
         }
         .tags-swiper {
+            display: none;
             position: absolute;
-            display: flex;
             place-items: center;
             padding: 15px 20px;
             right: -50px;
@@ -135,6 +138,15 @@
         h2 {
             text-align: left;
         }
+        ul {
+            li {
+                list-style: disc;
+                font-size: 16px;
+                font-family: 'Inter';
+                line-height: 1.4;
+                padding-bottom: 8px;
+            }
+        }
         .content__face {
             visibility: hidden;
             display: none;
@@ -151,11 +163,14 @@
         position: relative;
         .collapsible {
             position: fixed;
-            left: -263px;
+            left: -264px;
             z-index: 5;
             top: 0;
             height: 100vh;
             transition: left .3s;
+            .tags-swiper {
+                display: flex;
+            }
         }
         .collapsible.swiped {
             left: 0;
