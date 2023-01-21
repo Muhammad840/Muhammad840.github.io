@@ -263,7 +263,7 @@
         <div class="container">
             <h2>Our <span class="colored">experts</span></h2>
             <div class="experts-holder">
-                <div class="expert">
+                <div class="expert ex-v">
                     <div class="picture">
                         <div class="grabber">
                             <div class="img-hold">
@@ -281,7 +281,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="expert">
+                <div class="expert ex-v">
                     <div class="picture">
                         <div class="grabber">
                             <div class="img-hold">
@@ -299,7 +299,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="expert">
+                <div class="expert ex-v">
                     <div class="picture">
                         <div class="grabber">
                             <div class="img-hold">
@@ -317,7 +317,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="expert">
+                <div class="expert ex-v">
                     <div class="picture">
                         <div class="grabber">
                             <div class="img-hold">
@@ -335,7 +335,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="expert">
+                <div class="expert ex-v">
                     <div class="picture">
                         <div class="grabber">
                             <div class="img-hold">
@@ -439,7 +439,10 @@
                 This philosophy has served as well through the years, and has led some of our client relationships to last 
                 more than 40 years.
             </p>
-            <div>
+            <div class="clients-wrapper">
+                <div class="arrow-l">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide client">
@@ -486,8 +489,9 @@
                             <img src="img/clients/egpc-menatours-200x199.jpg">
                         </div>
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                </div>
+                <div class="arrow-r">
+                    <i class="fa-solid fa-arrow-right"></i>
                 </div>
             </div>
         </div>
@@ -592,10 +596,36 @@
             </div>
         </div>
     </footer>
+    <script>
+        let animatableElementObjs = [
+            {
+                element: document.querySelector('.contact-section'),
+                scrollPercentage: 0.4,
+                animationClass: 'conAnim',
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('footer'),
+                scrollPercentage: 0.2,
+                animationClass: 'footerAnim',
+                type: 'fade',
+                repeat: 2
+            },
+            {
+                element: document.querySelector('.copyrights'),
+                scrollPercentage: 0,
+                animationClass: 'copyrightAnim',
+                type: 'fade',
+                repeat: 2
+            }
+        ];
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="scrollanimation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="main.js"></script>
+    <script src="main.js" type="module"></script>
     <script src="leaders.js"></script>
     <script>
         //                          SWIPER
@@ -627,6 +657,12 @@
                 }
             }
         });
+        document.querySelector('.arrow-r').addEventListener('click', () => {
+            swiper.slideNext()
+        })
+        document.querySelector('.arrow-l').addEventListener('click', () => {
+            swiper.slideePrev()
+        })
     </script>
 </body>
 </html>

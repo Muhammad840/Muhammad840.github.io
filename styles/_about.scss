@@ -161,6 +161,22 @@ h2 {
         margin-bottom: 30px;
         text-align: center;
     }
+    .clients-wrapper {
+        display: flex;
+        align-items: center;
+        .arrow-r, .arrow-l {
+            border-radius: 50%;
+            padding: 8px 10px;
+            border: 2px solid rgb(226, 121, 50);
+            &:hover {
+                cursor: pointer;
+            }
+            i {
+                font-size: 24px;
+                color: rgb(226, 121, 50);
+            }
+        }
+    }
     .swiper-wrapper {
         align-items: center;
         .client {
@@ -199,6 +215,8 @@ h2 {
             }
             .person-holder {
                 width: auto;
+                height: auto;
+                aspect-ratio: 1/1;
                 img {
                     width: 100%;
                 }
@@ -229,7 +247,6 @@ h2 {
 
 @media (max-width:768px) {
     .experts-holder {
-        grid-template-columns: 1fr;
         .expert-info {
             padding-bottom: 25px;
             p {
@@ -239,6 +256,26 @@ h2 {
                 text-align: center;
                 margin: 0;
             }
+        }
+    }
+}
+
+@media (max-width:571px) {
+    .experts-holder {
+        grid-template-columns: 1fr;
+        padding: 0;
+        .expert {
+            display: none;
+            .expert-info {
+                height: auto;
+            }
+            p {
+                display: block;
+                margin-top: 15px;
+            }
+        }
+        .ex-v {
+            display: block;
         }
     }
 }

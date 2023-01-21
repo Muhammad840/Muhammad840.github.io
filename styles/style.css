@@ -1669,6 +1669,22 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
 }
+#clients .clients-wrapper {
+  display: flex;
+  align-items: center;
+}
+#clients .clients-wrapper .arrow-r, #clients .clients-wrapper .arrow-l {
+  border-radius: 50%;
+  padding: 8px 10px;
+  border: 2px solid rgb(226, 121, 50);
+}
+#clients .clients-wrapper .arrow-r:hover, #clients .clients-wrapper .arrow-l:hover {
+  cursor: pointer;
+}
+#clients .clients-wrapper .arrow-r i, #clients .clients-wrapper .arrow-l i {
+  font-size: 24px;
+  color: rgb(226, 121, 50);
+}
 #clients .swiper-wrapper {
   align-items: center;
 }
@@ -1716,6 +1732,8 @@ h2 {
   }
   .leaders .area1 .person-holder {
     width: auto;
+    height: auto;
+    aspect-ratio: 1/1;
   }
   .leaders .area1 .person-holder img {
     width: 100%;
@@ -1739,9 +1757,6 @@ h2 {
   }
 }
 @media (max-width: 768px) {
-  .experts-holder {
-    grid-template-columns: 1fr;
-  }
   .experts-holder .expert-info {
     padding-bottom: 25px;
   }
@@ -1751,6 +1766,25 @@ h2 {
   .experts-holder .expert-info h4 {
     text-align: center;
     margin: 0;
+  }
+}
+@media (max-width: 571px) {
+  .experts-holder {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .experts-holder .expert {
+    display: none;
+  }
+  .experts-holder .expert .expert-info {
+    height: auto;
+  }
+  .experts-holder .expert p {
+    display: block;
+    margin-top: 15px;
+  }
+  .experts-holder .ex-v {
+    display: block;
   }
 }
 .services {
