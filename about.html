@@ -141,21 +141,30 @@
     <section id="history">
         <div class="container">
             <h2>Our <span class="colored">history</span> </h2>
-            <p>
-                Founded in 1956 by Egyptian shipping magnate and entrepreneur Mohamed Leheta, 
-                Menatours is the 49th registered tour operator in Egypt, and has since commanded
-                a leading role in the tourism industry in Egypt.
-            </p>
-            <div class="leheta">
-                <p class="quoted">
-                    <i class="fa-solid fa-quote-left"></i>
-                    As our world becomes more dynamic everyday, our heritage and history at Menatours compels us to
-                    continually evolve through creative frameworks that allow us to leverage our experience in adapting to
-                    and exceeding client expectations.
-                    <i class="fa-solid fa-quote-right"></i>
-                </p>
-                <small>Mohamed Leheta</small>
-                <small>Founder, 1921-2012</small>
+            <div class="hs-grid">
+                <div class="history-left">
+                    <img src="img/history.png" alt="">
+                </div>
+                <div class="history-right">
+                    <p>
+                        Founded in 1956 by Egyptian shipping magnate and entrepreneur Mohamed Leheta, 
+                        Menatours is the 49th registered tour operator in Egypt, and has since commanded
+                        a leading role in the tourism industry in Egypt.
+                    </p>
+                    <div class="leheta">
+                        <p class="quoted">
+                            <i class="fa-solid fa-quote-left"></i>
+                            As our world becomes more dynamic everyday, our heritage and history at Menatours compels us to
+                            continually evolve through creative frameworks that allow us to leverage our experience in adapting to
+                            and exceeding client expectations.
+                            <i class="fa-solid fa-quote-right"></i>
+                        </p>
+                        <div class="quoter">
+                            <small>Mohamed Leheta</small>
+                            <small>Founder, 1921-2012</small>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -599,6 +608,45 @@
     <script>
         let animatableElementObjs = [
             {
+                element: document.querySelector('.about .main-section .container'),
+                scrollPercentage: 0,
+                animationClass: 'aboutAnim',
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('#history'),
+                scrollPercentage: 0.4,
+                animationClass: 'historyAnim',
+                animationDuration: 1.8,
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('#leadership'),
+                scrollPercentage: 0.3,
+                animationClass: 'leadersAnim',
+                animationDuration: 1,
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('#experts'),
+                scrollPercentage: 0.1,
+                animationClass: 'expertsAnim',
+                animationDuration: 1,
+                type: 'fade',
+                repeat: 1
+            },
+            {
+                element: document.querySelector('#clients'),
+                scrollPercentage: 1,
+                animationClass: 'clientsAnim',
+                animationDuration: 1.2,
+                type: 'fade',
+                repeat: 1
+            },
+            {
                 element: document.querySelector('.contact-section'),
                 scrollPercentage: 0.4,
                 animationClass: 'conAnim',
@@ -661,7 +709,7 @@
             swiper.slideNext()
         })
         document.querySelector('.arrow-l').addEventListener('click', () => {
-            swiper.slideePrev()
+            swiper.slidePrev()
         })
     </script>
 </body>

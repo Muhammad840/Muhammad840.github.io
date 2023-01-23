@@ -403,6 +403,12 @@ window.addEventListener('load', () => {
             item.style.transition = 'all .5s ' + delay + 's ease-out'
         })
     }
+    //      About / experts transition
+    if (document.querySelector('.experts-holder')) {
+        Array.from(document.querySelector('.experts-holder').children).forEach((expert, i) => {
+            expert.style.transition = 'all 0.5s ' + ((i*0.1) + 0.1) + 's ease-out'
+        })
+    }
     // Footer transition
     if (document.querySelector('footer')) {
         document.querySelectorAll('footer ul').forEach(ul => {

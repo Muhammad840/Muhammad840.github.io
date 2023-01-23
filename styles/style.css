@@ -7,6 +7,7 @@
   --tx-color-4: #f29858;
   --bg-color-1: rgb(240, 240, 240);
   --bg-color-2: #fff;
+  --bg-color-3: rgb(223, 226, 231);
   --footer-bg-1: rgb(37, 40, 51);
   --footer-bg-2: rgb(21, 23, 30);
   --hover-color: rgba(0,0,0,0.02);
@@ -56,7 +57,7 @@ li {
 }
 
 section {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 a {
@@ -1488,6 +1489,181 @@ footer.footerAnim li {
   transition: all 1.5s var(--timing-1);
 }
 
+/********************************************
+                      ABOUT                 *
+*********************************************
+*/
+.about .container h1 {
+  opacity: 0;
+  transform: translateY(15px);
+}
+.about .container h3 {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+.about .container.aboutAnim h1 {
+  opacity: 1;
+  transform: translateY(0);
+}
+.about .container.aboutAnim h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about .container.transitions h1 {
+  transition: all 1s var(--timing-1);
+}
+.about .container.transitions h3 {
+  transition: all 1s 0.2s var(--timing-1);
+}
+
+/*                 History 
+*/
+#history h2 {
+  opacity: 0;
+  transform: translateY(15px);
+}
+#history img {
+  opacity: 0;
+  transform: scale(0.8) translateY(15%);
+}
+#history p {
+  opacity: 0;
+  transform: translateY(15px);
+}
+#history .quoted i {
+  opacity: 0;
+  visibility: hidden;
+  transform: rotate(180deg) scale(0.5);
+}
+#history small {
+  transform: translateY(100%);
+}
+
+#history.historyAnim h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#history.historyAnim img {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+#history.historyAnim p {
+  opacity: 1;
+  transform: translateY(0);
+}
+#history.historyAnim .quoted i {
+  opacity: 1;
+  visibility: visible;
+  transform: rotate(0) scale(1);
+}
+#history.historyAnim small {
+  transform: translateY(0);
+}
+
+#history.transitions h2 {
+  transition: all 1s var(--timing-1);
+}
+#history.transitions img, #history.transitions p {
+  transition: all 0.7s 0.2s;
+}
+#history.transitions .quoted i, #history.transitions small {
+  transition: all 1s 0.5s var(--timing-1);
+}
+
+/*                   Leaders
+*/
+#leadership h2 {
+  opacity: 0;
+  transform: translateY(15px);
+}
+#leadership p {
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+#leadership.leadersAnim h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#leadership.leadersAnim p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#leadership.transitions h2 {
+  transition: all 1s var(--timing-1);
+}
+#leadership.transitions p {
+  transition: all 0.7s 0.2s;
+}
+
+/*              Experts
+*/
+#experts h2 {
+  opacity: 0;
+  transform: translateY(15px);
+}
+#experts .expert {
+  opacity: 0;
+  scale: 0.8;
+}
+
+#experts.expertsAnim h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#experts.expertsAnim .expert {
+  opacity: 1;
+  scale: 1;
+}
+
+#experts.transitions h2 {
+  transition: all 1s var(--timing-1);
+}
+
+/*              Clients
+*/
+#clients h2 {
+  opacity: 0;
+  transform: translateY(15px);
+}
+#clients p {
+  opacity: 0;
+  transform: translateY(15px);
+}
+#clients .arrow-r, #clients .arrow-l {
+  opacity: 0;
+  transform: translateX(-50px) scale(0.7);
+}
+#clients .arrow-l {
+  transform: translateX(50px);
+}
+
+#clients.clientsAnim h2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+#clients.clientsAnim p {
+  opacity: 1;
+  transform: translateY(0);
+}
+#clients.clientsAnim .arrow-r, #clients.clientsAnim .arrow-l {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+#clients.transitions h2 {
+  transition: all 1s var(--timing-1);
+}
+#clients.transitions p {
+  transition: all 0.7s 0.2s;
+}
+#clients.transitions .clients-wrapper .arrow-r, #clients.transitions .clients-wrapper .arrow-l {
+  transition: all 0.8s 0.4s var(--timing-1);
+}
+
 .about {
   background-image: url("../img/wallpapers/airplane.jpg");
   height: 70vh;
@@ -1522,9 +1698,31 @@ h2 {
   margin: auto;
 }
 
+#history .hs-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+#history .hs-grid img {
+  max-width: 500px;
+}
+#history .hs-grid .quoted {
+  background-color: var(--bg-color-3);
+  border-radius: 10px;
+  margin: 15px 0 8px 0;
+}
+#history .hs-grid .quoted i {
+  font-size: 20px;
+}
+#history .hs-grid .quoter {
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
 .leaders {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: auto 1fr;
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
@@ -1562,23 +1760,23 @@ h2 {
   align-items: center;
 }
 .area1 .current {
-  transform: scale(0.9);
+  transform: scale(1);
 }
 
 .person-holder {
   overflow: hidden;
   border-radius: 50%;
   border: solid 4px rgb(226, 121, 50);
-  width: 200px;
-  height: 200px;
-  transform: scale(0.5);
+  width: 126px;
+  height: 126px;
+  transform: scale(0.7);
   transition: transform 0.3s;
 }
 .person-holder img {
-  width: 200px;
+  width: 126px;
 }
 .person-holder:hover {
-  transform: scale(0.9);
+  transform: scale(1);
 }
 
 .area2 {
@@ -1650,7 +1848,8 @@ h2 {
 .experts-holder .expert .img-hold {
   overflow: hidden;
   border-radius: 50%;
-  border: solid 4px rgb(226, 121, 50);
+  border: solid 3px rgba(226, 120, 50, 0.692);
+  aspect-ratio: 1/1;
   height: 100px;
 }
 .experts-holder .expert .img-hold img {
@@ -1677,12 +1876,18 @@ h2 {
   border-radius: 50%;
   padding: 8px 10px;
   border: 2px solid rgb(226, 121, 50);
+  transition: background 0.3s;
 }
 #clients .clients-wrapper .arrow-r:hover, #clients .clients-wrapper .arrow-l:hover {
   cursor: pointer;
+  background-color: rgb(226, 121, 50);
+}
+#clients .clients-wrapper .arrow-r:hover i, #clients .clients-wrapper .arrow-l:hover i {
+  color: var(--bg-color-1);
 }
 #clients .clients-wrapper .arrow-r i, #clients .clients-wrapper .arrow-l i {
   font-size: 24px;
+  transition: color 0.3s;
   color: rgb(226, 121, 50);
 }
 #clients .swiper-wrapper {
@@ -1726,20 +1931,25 @@ h2 {
   }
   .leaders .area1 {
     display: flex;
-  }
-  .leaders .area1 .current {
-    transform: scale(0.7);
+    justify-content: space-around;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
   }
   .leaders .area1 .person-holder {
     width: auto;
     height: auto;
     aspect-ratio: 1/1;
+    transform: scale(0.6);
   }
   .leaders .area1 .person-holder img {
     width: 100%;
   }
   .leaders .area1 .person-holder:hover {
-    transform: scale(0.7);
+    transform: scale(0.8);
+  }
+  .leaders .area1 .person-holder.current {
+    transform: scale(0.8);
   }
   .leaders .area2 {
     min-height: 400px;
@@ -1754,6 +1964,22 @@ h2 {
 @media (max-width: 1024px) {
   .about h1 {
     margin: auto;
+  }
+  #history .hs-grid {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+  }
+  #history .hs-grid .history-left {
+    display: flex;
+    justify-content: center;
+  }
+  #history .hs-grid img {
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+  }
+  #history .hs-grid .quoted {
+    margin: 15px auto;
   }
 }
 @media (max-width: 768px) {
@@ -1785,6 +2011,14 @@ h2 {
   }
   .experts-holder .ex-v {
     display: block;
+  }
+}
+@media (max-width: 480px) {
+  #history .hs-grid {
+    row-gap: 0;
+  }
+  #history .hs-grid img {
+    display: none;
   }
 }
 .services {
