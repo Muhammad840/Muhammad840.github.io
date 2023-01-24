@@ -403,6 +403,17 @@ window.addEventListener('load', () => {
             item.style.transition = 'all .5s ' + delay + 's ease-out'
         })
     }
+    //    services / fleet transition 
+    if (document.querySelector('.transportation')) {
+        Array.from(document.querySelectorAll('.transport__list')).forEach((item, index) => {
+            let delay = (index*0.1*1.7) + 0.2
+            item.style.transition = 'all .5s ' + delay + 's ease-out'
+            Array.from(item.children).forEach((child, i) => {
+                let subDelay = delay + ((i*0.1*1.7) + 0.2)
+                child.style.transition = 'all .5s ' + subDelay + 's ease-out'
+            })
+        })
+    }
     //      About / experts transition
     if (document.querySelector('.experts-holder')) {
         Array.from(document.querySelector('.experts-holder').children).forEach((expert, i) => {

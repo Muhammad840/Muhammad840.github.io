@@ -1489,6 +1489,52 @@ footer.footerAnim li {
   transition: all 1.5s var(--timing-1);
 }
 
+/*              Fleet
+*/
+.transportation .transport::before {
+  height: 0;
+}
+.transportation .transport::after {
+  width: 0;
+  height: 0;
+  border-bottom-right-radius: 50%;
+}
+.transportation .transport li {
+  opacity: 0;
+  transform: translateY(15px);
+}
+.transportation .transport li:first-child {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+.transportation.transportAnim .transport::before {
+  height: 100%;
+}
+.transportation.transportAnim .transport::after {
+  width: 100%;
+  height: 100%;
+  border-bottom-right-radius: 0;
+}
+.transportation.transportAnim .transport li {
+  opacity: 1;
+  transform: translateY(0);
+}
+.transportation.transportAnim .transport li:first-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.transportation.transitions .transport::before {
+  transition: all 0.5s 1s ease;
+}
+.transportation.transitions .transport::after {
+  transition: all 0.7s 0s var(--timing-1);
+}
+.transportation.transitions .transport li:first-child {
+  transition: all 1s 0.2s var(--timing-1);
+}
+
 /********************************************
                       ABOUT                 *
 *********************************************
@@ -2320,14 +2366,31 @@ svg {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  z-index: -2;
+  position: relative;
 }
 .transportation .transport {
+  position: relative;
   padding: 20px 0;
   width: 60%;
-  border-left: 5px solid var(--brand-color-2);
   border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.3764705882);
   color: rgba(255, 255, 255, 0.842);
+}
+.transportation .transport::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  background-color: var(--brand-color-2);
+}
+.transportation .transport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.3764705882);
 }
 .transportation .transport li:first-child {
   font-weight: bold;

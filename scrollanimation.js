@@ -35,7 +35,6 @@ window.addEventListener('load', () => {
                         entry.target.classList.add('transitions')
                         entry.target.classList.remove(elementOb.animationClass)
                         if (elementOb.animationDuration) {
-                        console.log(elementOb.animationDuration*1000)
                             setTimeout(removeTransition, elementOb.animationDuration*1000)
                         }
                         else {
