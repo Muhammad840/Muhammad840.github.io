@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Menatours</title>
     <link rel="icon" href="img/logo/title.png" type="image/icon type">
+    <link rel="stylesheet" href="styles/loader.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -14,8 +15,11 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 <body>
+    <div class="loader">
+        <div class="gif"></div>
+    </div>
     <header class="about">
-        <nav class="nav">
+        <nav class="nav flatNav">
             <div class="nav-content">
                 <div id="logo">
                     <a href="index.html">
@@ -23,35 +27,35 @@
                     </a>
                 </div>
                 <ul class="right-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="trig"><a href="">Corporate Travel Management</a>
+                    <li><a href="">Home</a></li>
+                    <li class="trig discovertrig"><a href="discover.html">Corporate Travel Management</a>
                         <ul class="dropdown">
-                            <li><a href="">Getting Started</a>
+                            <li class="click-disabled"><a>Getting Started</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Corporate Travel Policy</a></li>
+                                    <li id="policy"><a>Corporate Travel Policy</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Engaging Travelers</a>
+                            <li id="engaging"><a>Engaging Travelers</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Staying Overnight</a></li>
-                                    <li><a href="">Travel Booking Services</a></li>
+                                    <li id="stay"><a>Staying Overnight</a></li>
+                                    <li id="booking"><a>Travel Booking Services</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Managing Risk</a>
+                            <li id="risk"><a>Managing Risk</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Traveler Care</a></li>
+                                    <li id="care"><a>Traveler Care</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Business Traveler Savings</a>
+                            <li id="savings"><a>Business Traveler Savings</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Supplier Management</a></li>
+                                    <li id="supplier"><a>Supplier Management</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Travel Consulting</a>
+                            <li><a>Travel Consulting</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Travel Services Outsourcing</a></li>
-                                    <li><a href="">Travel Expense Strategy</a></li>
-                                    <li><a href="">Driving Action</a></li>
+                                    <li id="outsourcing"><a>Travel Services Outsourcing</a></li>
+                                    <li id="expense"><a>Travel Expense Strategy</a></li>
+                                    <li id="updates"><a>Driving Action</a></li>
                                 </ul>
                             </li>
                             <li><a href="">Business Traveler Services</a></li>
@@ -68,14 +72,14 @@
                         </ul>
                     </li>
                     <!-- <li><a href="">Airline Services</a></li> -->
-                    <li class="trig"><a href="">About</a>
+                    <li class="trig"><a href="about.html">About</a>
                         <ul class="dropdown">
-                            <li><a href="#history">Our History</a></li>
+                            <li><a href="about.html#history">Our History</a></li>
                             <li><a href="">Our Presence</a></li>
-                            <li><a href="#experts">Our Experts</a></li>
-                            <li><a href="#clients">Clients and Testimonials</a></li>
+                            <li><a href="about.html#experts">Our Experts</a></li>
+                            <li><a href="about.html#clients">Clients and Testimonials</a></li>
                             <li><a href="">Our Strategy</a></li>
-                            <li><a href="#leadership">Our Leadership</a></li>
+                            <li><a href="about.html#leadership">Our Leadership</a></li>
                         </ul>
                     </li>
                     <li class="switch">
@@ -94,16 +98,49 @@
             <div class="hamburger-holder trans">
                 <div class="container hamburger-menu">
                     <li class="item">
-                        Home
+                        <span>Home</span>
+                        <div class="switch">
+                            <div class="switch__control">
+                                <i class="switch__icon fa-regular fa-sun off"></i>
+                                <i class="switch__icon fa-regular fa-moon"></i>
+                            </div>
+                        </div>
                     </li>
                     <li class="item">
                         <span>Corporate Travel Management</span>
                         <i class="fa-solid fa-chevron-left"></i>
                     </li>
-                    <ul class="mini-items trans">
-                        <li class="mini-item"><a href="">Travel Services Outsourcing</a></li>
-                        <li class="mini-item"><a href="">Travel Expense Strategy</a></li>
-                        <li class="mini-item"><a href="">Driving Action</a></li>
+                    <ul class="mini-items trans discovertrig ham">
+                        <li class="mini-item engaging"><a>Engaging</a></li>
+                        <li class="mini-item click-disabled">
+                            <a>Services</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item stay">Staying overnight</li>
+                            <li class="mini-item booking">Booking services</li>
+                            <li class="mini-item business">Business traveler services</li>
+                        </ul>
+                        <li class="mini-item click-disabled">
+                            <a>Safety</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item risk">Managing risk</li>
+                            <li class="mini-item care">Traveler care</li>
+                        </ul>
+                        <li class="mini-item click-disabled">
+                            <a>Funding</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item savings">Business traveler savings</li>
+                            <li class="mini-item supplier">Supplier management</li>
+                            <li class="mini-item expense">Travel expense strategy</li>
+                        </ul>
+                        <li class="mini-item outsourcing"><a>Travel services outsourcing</a></li>
+                        <li class="mini-item updates"><a>Tracking updates</a></li>
+                        <li class="mini-item policy"><a>Corporate travel policy</a></li>
                     </ul>
                     <li class="item">
                         <span>Services</span>
@@ -455,47 +492,150 @@
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide client">
-                            <img src="img/clients/aibank-menatours-200x113.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/aibank-menatours-200x113.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/ain-shams-university-engineering-menatours.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/ain-shams-university-engineering-menatours.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/alfa-ceramic-menatours.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/alfa-ceramic-menatours.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/arab-bank-menatours-200x171.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/arab-bank-menatours-200x171.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/central-bank-of-egypt-menatours.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/central-bank-of-egypt-menatours.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/efg-hermes-menatours-200x41.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/efg-hermes-menatours-200x41.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/egpc-menatours-200x199.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/egpc-menatours-200x199.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/european-university-menatours-1-200x201.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/fiasal-islamic-bank-200x174.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/french-embassy-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/gezira-sports-club-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/hsbc-menatours.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/icbr-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/inner-wheel-logo.jpg">
+                            </div>
                         </div>
                         
                         <div class="swiper-slide client">
-                            <img src="img/clients/aibank-menatours-200x113.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/kensington-tours-menatours.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/ain-shams-university-engineering-menatours.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/MUP-menatours-200x104.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/alfa-ceramic-menatours.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/Nile-University-menatours.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/arab-bank-menatours-200x171.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/Norel-Menatours-200x70.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/central-bank-of-egypt-menatours.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/october-pharma-menatours.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/efg-hermes-menatours-200x41.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/osiris-tours-menatours-200x46.jpg">
+                            </div>
                         </div>
                         <div class="swiper-slide client">
-                            <img src="img/clients/egpc-menatours-200x199.jpg">
+                            <div class="client-img-cover">
+                                <img src="img/clients/pickalbatros-hotels-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/polish-embassy-menatours-200x219.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/shell-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/sinai-white-cement-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/titan-cement-egypt.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/travelplan-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/wild-china-menatours.jpg">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/wild-guanabana-menatours.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide client">
+                            <div class="client-img-cover">
+                                <img src="img/clients/zamil-steel-menatours.jpg">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -616,7 +756,7 @@
             },
             {
                 element: document.querySelector('#history'),
-                scrollPercentage: 0.4,
+                scrollPercentage: 0.2,
                 animationClass: 'historyAnim',
                 animationDuration: 1.8,
                 type: 'fade',
@@ -640,7 +780,7 @@
             },
             {
                 element: document.querySelector('#clients'),
-                scrollPercentage: 1,
+                scrollPercentage: .3,
                 animationClass: 'clientsAnim',
                 animationDuration: 1.2,
                 type: 'fade',

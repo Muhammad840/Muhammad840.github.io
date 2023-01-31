@@ -636,6 +636,10 @@ footer.footerAnim {
     .arrow-l {
         transform: translateX(50px);
     }
+    .client-img-cover {
+        opacity: 0;
+        transform: scale(.2);
+    }
 }
 #clients.clientsAnim {
     h2 {
@@ -649,6 +653,10 @@ footer.footerAnim {
     .arrow-r, .arrow-l {
         opacity: 1;
         transform: translateX(0) scale(1);
+    }
+    .client-img-cover {
+        opacity: 1;
+        transform: scale(1);
     }
 }
 #clients.transitions {

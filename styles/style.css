@@ -102,8 +102,53 @@ input:focus {
   outline: none;
 }
 
+.checkbox-layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  aspect-ratio: 1/1;
+  border-radius: 3px;
+  margin-right: 5px;
+  position: relative;
+  background-color: var(--input-color-2);
+}
+
+.checkbox-layer + label:hover {
+  cursor: pointer;
+}
+
 input[type=checkbox] {
+  opacity: 0;
   margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+input[type=checkbox]:hover, .checkbox-mark:hover, .checkbox:hover {
+  cursor: pointer;
+}
+
+.checkbox-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 5px;
+  aspect-ratio: 1/1;
+  width: 100%;
+  background-color: #0054ff;
+  transition: all 0.3s;
+  opacity: 0;
+  scale: 0;
+}
+
+.checkbox-mark.checked {
+  opacity: 1;
+  scale: 1;
 }
 
 p {
@@ -952,6 +997,11 @@ footer li:first-child {
   color: #fff;
 }
 
+.subscribe {
+  display: flex;
+  justify-content: end;
+}
+
 .subscribe li {
   margin-bottom: 15px;
 }
@@ -979,8 +1029,9 @@ footer li:first-child {
 }
 
 .subscribe button {
-  padding: 5px 20px;
+  padding: 10px 20px;
   font-size: 12px;
+  width: 100%;
   background-color: #c95a26;
   color: #fff;
   font-family: "Inter", sans-serif;
@@ -1686,6 +1737,10 @@ footer.footerAnim li {
 #clients .arrow-l {
   transform: translateX(50px);
 }
+#clients .client-img-cover {
+  opacity: 0;
+  transform: scale(0.2);
+}
 
 #clients.clientsAnim h2 {
   opacity: 1;
@@ -1698,6 +1753,10 @@ footer.footerAnim li {
 #clients.clientsAnim .arrow-r, #clients.clientsAnim .arrow-l {
   opacity: 1;
   transform: translateX(0) scale(1);
+}
+#clients.clientsAnim .client-img-cover {
+  opacity: 1;
+  transform: scale(1);
 }
 
 #clients.transitions h2 {
@@ -1936,6 +1995,9 @@ h2 {
   transition: color 0.3s;
   color: rgb(226, 121, 50);
 }
+#clients .clients-wrapper .swiper {
+  padding: 0 15px;
+}
 #clients .swiper-wrapper {
   align-items: center;
 }
@@ -1947,6 +2009,15 @@ h2 {
 #clients .swiper-wrapper .client img {
   margin: 0 30px;
   width: 100px;
+}
+#clients .swiper-wrapper .client .client-img-cover {
+  min-height: 128px;
+  min-width: 100%;
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @-webkit-keyframes carousel {
@@ -2038,6 +2109,9 @@ h2 {
   .experts-holder .expert-info h4 {
     text-align: center;
     margin: 0;
+  }
+  #clients .swiper-wrapper .client .client-img-cover {
+    min-width: 100px;
   }
 }
 @media (max-width: 571px) {

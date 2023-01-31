@@ -357,6 +357,26 @@ document.querySelector('.modal').addEventListener('click', (e) => {
     }
 })*/
 
+/*                              FOOTER 
+*/
+
+if (document.querySelector('.checkbox-layer')) {
+    document.querySelectorAll('.checkbox').forEach(checkbox => {
+        checkbox.addEventListener('click', () => {
+            Array.from(checkbox.children).forEach(checkboxLayer => {
+                Array.from(checkboxLayer.children).forEach(check => {
+                    if (check.className.includes('checkbox-mark')) {
+                        check.classList.toggle('checked')
+                    }
+                    else if (check.type == 'checkbox') {
+                        check.checked = !check.checked
+                    }
+                })
+            })
+        })
+    })
+}
+
 /*                          LOADER + ON LOAD */
 window.addEventListener('load', () => {
     // Logo animation
@@ -420,6 +440,12 @@ window.addEventListener('load', () => {
             expert.style.transition = 'all 0.5s ' + ((i*0.1) + 0.1) + 's ease-out'
         })
     }
+    //      About / clients transition
+    if (document.querySelector('.client-img-cover')) {
+        Array.from(document.querySelectorAll('.client-img-cover')).forEach((cover, i) => {
+            cover.style.transition = 'all 0.5s ' + ((i*0.1) + 0.1) + 's ease-out'
+        })
+    }
     // Footer transition
     if (document.querySelector('footer')) {
         document.querySelectorAll('footer ul').forEach(ul => {
@@ -431,6 +457,16 @@ window.addEventListener('load', () => {
                     li.style.transition = 'all .5s var(--timing-1)'
                 }
             })
+            if (!ul.nextElementSibling) {
+                Array.from(ul.firstElementChild.children).forEach((li, i) => {
+                    if (i !== 0) {
+                        li.style.transition = 'all 0.5s ' + ((i*0.1) + 0.2) + 's ease-out'
+                    }
+                    else {
+                        li.style.transition = 'all .5s var(--timing-1)'
+                    }
+                })
+            }
         })
     }
 })

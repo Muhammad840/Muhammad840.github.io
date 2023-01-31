@@ -207,6 +207,9 @@ h2 {
                 color: rgb(226, 121, 50);
             }
         }
+        .swiper {
+            padding: 0 15px;
+        }
     }
     .swiper-wrapper {
         align-items: center;
@@ -217,6 +220,15 @@ h2 {
             img {
                 margin: 0 30px;
                 width: 100px;
+            }
+            .client-img-cover {
+                min-height: 128px;
+                min-width: 100%;
+                background-color: rgb(240, 240, 240);
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
@@ -309,6 +321,15 @@ h2 {
             h4 {
                 text-align: center;
                 margin: 0;
+            }
+        }
+    }
+    #clients {
+        .swiper-wrapper {
+            .client {
+                .client-img-cover {
+                    min-width: 100px;
+                }
             }
         }
     }

@@ -105,8 +105,57 @@ input:focus {
     outline: none;
 }
 
+.checkbox {
+}
+
+.checkbox-layer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 3px;
+    margin-right: 5px;
+    position: relative;
+    background-color: var(--input-color-2);
+}
+
+.checkbox-layer + label:hover {
+    cursor: pointer;
+}
+
 input[type="checkbox"] {
+    opacity: 0;
     margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+input[type="checkbox"]:hover, .checkbox-mark:hover, .checkbox:hover {
+    cursor: pointer;
+}
+
+.checkbox-mark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+    width: 100%;
+    background-color: #0054ff;
+    transition: all .3s;
+
+    opacity: 0;
+    scale: 0;
+}
+
+.checkbox-mark.checked {
+    opacity: 1;
+    scale: 1;
 }
 
 p {
@@ -899,6 +948,11 @@ footer li:first-child {
     color: #fff;
 }
 
+.subscribe {
+    display: flex;
+    justify-content: end;
+}
+
 .subscribe li {
     margin-bottom: 15px;
 }
@@ -925,8 +979,9 @@ footer li:first-child {
 }
 
 .subscribe button {
-    padding: 5px 20px;
+    padding: 10px 20px;
     font-size: 12px;
+    width: 100%;
     background-color: #c95a26;
     color: #fff;
     font-family: 'Inter', sans-serif;

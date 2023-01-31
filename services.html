@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
     <link rel="icon" href="img/logo/title.png" type="image/icon type">
+    <link rel="stylesheet" href="styles/loader.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
@@ -14,6 +15,9 @@
     <link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
 <body>
+    <div class="loader">
+        <div class="gif"></div>
+    </div>
     <header class="services">
         <nav class="nav">
             <div class="nav-content">
@@ -23,42 +27,42 @@
                     </a>
                 </div>
                 <ul class="right-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="trig"><a href="">Corporate Travel Management</a>
+                    <li><a href="">Home</a></li>
+                    <li class="trig discovertrig"><a href="discover.html">Corporate Travel Management</a>
                         <ul class="dropdown">
-                            <li><a href="">Getting Started</a>
+                            <li class="click-disabled"><a>Getting Started</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Corporate Travel Policy</a></li>
+                                    <li id="policy"><a>Corporate Travel Policy</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Engaging Travelers</a>
+                            <li id="engaging"><a>Engaging Travelers</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Staying Overnight</a></li>
-                                    <li><a href="">Travel Booking Services</a></li>
+                                    <li id="stay"><a>Staying Overnight</a></li>
+                                    <li id="booking"><a>Travel Booking Services</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Managing Risk</a>
+                            <li id="risk"><a>Managing Risk</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Traveler Care</a></li>
+                                    <li id="care"><a>Traveler Care</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Business Traveler Savings</a>
+                            <li id="savings"><a>Business Traveler Savings</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Supplier Management</a></li>
+                                    <li id="supplier"><a>Supplier Management</a></li>
                                 </ul>
                             </li>
-                            <li><a href="">Travel Consulting</a>
+                            <li><a>Travel Consulting</a>
                                 <ul class="mini-dropdown">
-                                    <li><a href="">Travel Services Outsourcing</a></li>
-                                    <li><a href="">Travel Expense Strategy</a></li>
-                                    <li><a href="">Driving Action</a></li>
+                                    <li id="outsourcing"><a>Travel Services Outsourcing</a></li>
+                                    <li id="expense"><a>Travel Expense Strategy</a></li>
+                                    <li id="updates"><a>Driving Action</a></li>
                                 </ul>
                             </li>
                             <li><a href="">Business Traveler Services</a></li>
                         </ul>
                     </li>
                     <!-- <li><a href="">Meetings And Events</a></li> -->
-                    <li class="trig"><a href="">Services</a>
+                    <li class="trig"><a href="services.html">Services</a>
                         <ul class="dropdown">
                             <li><a href="">Ground Handling</a></li>
                             <li><a href="">Hotels and Cruises</a></li>
@@ -70,12 +74,12 @@
                     <!-- <li><a href="">Airline Services</a></li> -->
                     <li class="trig"><a href="about.html">About</a>
                         <ul class="dropdown">
-                            <li><a href="#history">Our History</a></li>
+                            <li><a href="about.html#history">Our History</a></li>
                             <li><a href="">Our Presence</a></li>
-                            <li><a href="#experts">Our Experts</a></li>
-                            <li><a href="#clients">Clients and Testimonials</a></li>
+                            <li><a href="about.html#experts">Our Experts</a></li>
+                            <li><a href="about.html#clients">Clients and Testimonials</a></li>
                             <li><a href="">Our Strategy</a></li>
-                            <li><a href="#leadership">Our Leadership</a></li>
+                            <li><a href="about.html#leadership">Our Leadership</a></li>
                         </ul>
                     </li>
                     <li class="switch">
@@ -94,16 +98,49 @@
             <div class="hamburger-holder trans">
                 <div class="container hamburger-menu">
                     <li class="item">
-                        Home
+                        <span>Home</span>
+                        <div class="switch">
+                            <div class="switch__control">
+                                <i class="switch__icon fa-regular fa-sun off"></i>
+                                <i class="switch__icon fa-regular fa-moon"></i>
+                            </div>
+                        </div>
                     </li>
                     <li class="item">
                         <span>Corporate Travel Management</span>
                         <i class="fa-solid fa-chevron-left"></i>
                     </li>
-                    <ul class="mini-items trans">
-                        <li class="mini-item"><a href="">Travel Services Outsourcing</a></li>
-                        <li class="mini-item"><a href="">Travel Expense Strategy</a></li>
-                        <li class="mini-item"><a href="">Driving Action</a></li>
+                    <ul class="mini-items trans discovertrig ham">
+                        <li class="mini-item engaging"><a>Engaging</a></li>
+                        <li class="mini-item click-disabled">
+                            <a>Services</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item stay">Staying overnight</li>
+                            <li class="mini-item booking">Booking services</li>
+                            <li class="mini-item business">Business traveler services</li>
+                        </ul>
+                        <li class="mini-item click-disabled">
+                            <a>Safety</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item risk">Managing risk</li>
+                            <li class="mini-item care">Traveler care</li>
+                        </ul>
+                        <li class="mini-item click-disabled">
+                            <a>Funding</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item savings">Business traveler savings</li>
+                            <li class="mini-item supplier">Supplier management</li>
+                            <li class="mini-item expense">Travel expense strategy</li>
+                        </ul>
+                        <li class="mini-item outsourcing"><a>Travel services outsourcing</a></li>
+                        <li class="mini-item updates"><a>Tracking updates</a></li>
+                        <li class="mini-item policy"><a>Corporate travel policy</a></li>
                     </ul>
                     <li class="item">
                         <span>Services</span>
