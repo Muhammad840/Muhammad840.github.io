@@ -844,6 +844,9 @@ small {
     @include background("../img/wallpapers/pexels-pixabay-163143.jpg");
     text-align: center;
     color: #fff;
+    h2 {
+        margin-top: 0;
+    }
 }
 
 .btn-2 {
@@ -951,6 +954,12 @@ footer li:first-child {
 .subscribe {
     display: flex;
     justify-content: end;
+    min-width: 250px;
+}
+
+.subscribe-container {
+    width: 250px;
+    max-width: 100%;
 }
 
 .subscribe li {
@@ -964,6 +973,7 @@ footer li:first-child {
 
 .subscribe input[type="email"] {
     background-color: var(--input-color-2);
+    width: 100%;
 }
 
 .subscribe .clabel {
@@ -987,6 +997,43 @@ footer li:first-child {
     font-family: 'Inter', sans-serif;
     border: none;
     border-radius: 3px;
+}
+
+.subscribe-message {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 4px;
+    h4 {
+        margin: 0;
+        line-height: 1.2;
+    }
+    i {
+        display: flex;
+        align-items: center;
+        min-width: 13px;
+    }
+}
+.subscribe-message.error {
+    border: 1px solid rgb(161, 0, 0);
+    color: rgb(203, 0, 0);
+    background-color: #ff000025;
+}
+.subscribe-message.warning {
+    border: 1px solid rgb(161, 150, 0);
+    color: rgb(203, 183, 0);
+    background-color: #ffe60025;
+}
+.subscribe-message.success {
+    border: 1px solid rgb(59, 161, 0);
+    color: rgb(47, 203, 0);
+    background-color: #51ff0025;
+}
+
+li.subscribe-message.hidden {
+    visibility: hidden;
+    height: 0;
+    margin-bottom: 0;
 }
 
 .modal {
@@ -1219,6 +1266,11 @@ footer li:first-child {
         grid-template-columns: 1fr 1fr;
         row-gap: 50px;
     }
+
+    .subscribe {
+        justify-content: flex-start;
+    }
+
     .modal__box {
         width: 80%;
     }
@@ -1289,6 +1341,9 @@ footer li:first-child {
         .search, .checkbox {
             justify-content: center;
         }
+    }
+    .subscribe {
+        justify-content: center;
     }
     .fullname {
         flex-direction: column;

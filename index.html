@@ -434,7 +434,7 @@
                         <li><span class="ftheads">Subscribe</span></li>
                         <li>
                             <label for="email">Email Address</label>
-                            <input type="email" placeholder="Enter your email">
+                            <input type="email" id="subscribe-email" placeholder="Enter your email">
                         </li>
                         <li>
                             <label for="Interest">Interest</label>
@@ -453,8 +453,11 @@
                                 <label for="Inbound" class="clabel">Inbound tourism</label>
                             </div>
                         </li>
+                        <li class="subscribe-message hidden">
+                            <i class="fa-solid fa-error"></i><h4>This is the message</h4>
+                        </li>
                         <li>
-                            <button>Subscribe</button>
+                            <button id="subscribe-btn">Subscribe</button>
                         </li>
                     </div>
                 </ul>
