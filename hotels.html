@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels - Menatours</title>
+    <script src="mode.js" type="module"></script>
+    <link rel="icon" href="img/logo/title.png" type="image/icon type">
+    <link rel="stylesheet" href="styles/loader.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+</head>
+<body>
+    <div class="loader">
+        <div class="gif"></div>
+    </div>
+    <header class="hotels">
+        <nav class="nav flatNav">
+            <div class="nav-content">
+                <div id="logo">
+                    <a href="index.html">
+                        <img src="img\logo\menatours-Egypt-37658-1554118075-odg2.png" alt="" width="180px">
+                    </a>
+                </div>
+                <ul class="right-nav">
+                    <li><a href="">Home</a></li>
+                    <li class="trig discovertrig"><a href="discover.html">Corporate Travel Management</a>
+                        <ul class="dropdown">
+                            <li class="click-disabled"><a>Getting Started</a>
+                                <ul class="mini-dropdown">
+                                    <li id="policy"><a>Corporate Travel Policy</a></li>
+                                </ul>
+                            </li>
+                            <li id="engaging"><a>Engaging Travelers</a>
+                                <ul class="mini-dropdown">
+                                    <li id="stay"><a>Staying Overnight</a></li>
+                                    <li id="booking"><a>Travel Booking Services</a></li>
+                                </ul>
+                            </li>
+                            <li id="risk"><a>Managing Risk</a>
+                                <ul class="mini-dropdown">
+                                    <li id="care"><a>Traveler Care</a></li>
+                                </ul>
+                            </li>
+                            <li id="savings"><a>Business Traveler Savings</a>
+                                <ul class="mini-dropdown">
+                                    <li id="supplier"><a>Supplier Management</a></li>
+                                </ul>
+                            </li>
+                            <li><a>Travel Consulting</a>
+                                <ul class="mini-dropdown">
+                                    <li id="outsourcing"><a>Travel Services Outsourcing</a></li>
+                                    <li id="expense"><a>Travel Expense Strategy</a></li>
+                                    <li id="updates"><a>Driving Action</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Business Traveler Services</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="">Meetings And Events</a></li> -->
+                    <li class="trig"><a href="services.html">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="">Ground Handling</a></li>
+                            <li><a href="">Hotels and Cruises</a></li>
+                            <li><a href="">Our Fleet</a></li>
+                            <li><a href="">Airline Services</a></li>
+                            <li><a href="">Signature Services</a></li>
+                        </ul>
+                    </li>
+                    <!-- <li><a href="">Airline Services</a></li> -->
+                    <li class="trig"><a href="about.html">About</a>
+                        <ul class="dropdown">
+                            <li><a href="about.html#history">Our History</a></li>
+                            <li><a href="">Our Presence</a></li>
+                            <li><a href="about.html#experts">Our Experts</a></li>
+                            <li><a href="about.html#clients">Clients and Testimonials</a></li>
+                            <li><a href="">Our Strategy</a></li>
+                            <li><a href="about.html#leadership">Our Leadership</a></li>
+                        </ul>
+                    </li>
+                    <li class="switch">
+                        <div class="switch__control">
+                            <i class="switch__icon fa-regular fa-sun off"></i>
+                            <i class="switch__icon fa-regular fa-moon"></i>
+                        </div>
+                    </li>
+                </ul>  
+                <div class="menu" id="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="hamburger-holder trans">
+                <div class="container hamburger-menu">
+                    <li class="item">
+                        <span>Home</span>
+                        <div class="switch">
+                            <div class="switch__control">
+                                <i class="switch__icon fa-regular fa-sun off"></i>
+                                <i class="switch__icon fa-regular fa-moon"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span>Corporate Travel Management</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <ul class="mini-items trans discovertrig ham">
+                        <li class="mini-item engaging"><a>Engaging</a></li>
+                        <li class="mini-item click-disabled">
+                            <a>Services</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item stay">Staying overnight</li>
+                            <li class="mini-item booking">Booking services</li>
+                            <li class="mini-item business">Business traveler services</li>
+                        </ul>
+                        <li class="mini-item click-disabled">
+                            <a>Safety</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item risk">Managing risk</li>
+                            <li class="mini-item care">Traveler care</li>
+                        </ul>
+                        <li class="mini-item click-disabled">
+                            <a>Funding</a>
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </li>
+                        <ul class="submini-items trans">
+                            <li class="mini-item savings">Business traveler savings</li>
+                            <li class="mini-item supplier">Supplier management</li>
+                            <li class="mini-item expense">Travel expense strategy</li>
+                        </ul>
+                        <li class="mini-item outsourcing"><a>Travel services outsourcing</a></li>
+                        <li class="mini-item updates"><a>Tracking updates</a></li>
+                        <li class="mini-item policy"><a>Corporate travel policy</a></li>
+                    </ul>
+                    <li class="item">
+                        <span>Services</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <ul class="mini-items trans">
+                        <li class="mini-item"><a href="">Ground Handling</a></li>
+                        <li class="mini-item"><a href="">Hotels and Cruises</a></li>
+                        <li class="mini-item"><a href="">Our Fleet</a></li>
+                        <li class="mini-item"><a href="">Airline Services</a></li>
+                        <li class="mini-item"><a href="">Signature Services</a></li>
+                    </ul>
+                    <li class="item">
+                        <span>About</span>
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <ul class="mini-items trans">
+                        <li class="mini-item"><a href="">Our History</a></li>
+                        <li class="mini-item"><a href="">Our Presence</a></li>
+                        <li class="mini-item"><a href="">Our Experts</a></li>
+                        <li class="mini-item"><a href="">Clients and Testimonials</a></li>
+                        <li class="mini-item"><a href="">Our Strategy</a></li>
+                        <li class="mini-item"><a href="">Our Leadership</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <div class="main-section">
+        <div class="container">
+            <div class="textcontainer"><h2>Browse our hotels</h2></div>
+            <h3>Helping you and your travelers go further every day</h3>
+        </div>
+    </div>
+    </header>
+    <section>
+        <div class="container hotels">
+            <div class="filters">
+                <h3>Some header</h3>
+                <div class="filters__cover">
+                    <div class="filter filter__city">
+                        <p>Filter:</p>
+                        <div class="filter__dropdown dropdown__city">
+                            City
+                            <i class="fa-sharp fa-solid fa-caret-down"></i>
+                            <ul class="dropdown__list filter-out category_city" data-simplebar data-simplebar-auto-hide="false">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="filter sort__by">
+                        <p>Sort by:</p>
+                        <div class="filter__dropdown">
+                            Most relevant
+                            <i class="fa-sharp fa-solid fa-caret-down"></i>
+                            <ul class="dropdown__list" data-simplebar data-simplebar-auto-hide="false">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hotels__container">
+                <div class="hotels__city city__alexandria">
+                    <div class="city__name">
+                        <h3>Alexandria</h3>
+                    </div>
+                    <div class="hotels__grid__wrapper">
+                        <div class="hotels__grid">
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur 1</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur 2</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur 3</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur4 </h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur 5</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur6</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur7</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur8</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur9</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur10</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotels__city city__alexandria">
+                    <div class="city__name">
+                        <h3>Alexandria</h3>
+                    </div>
+                    <div class="hotels__grid__wrapper">
+                        <div class="hotels__grid">
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotels__city city__alexandria">
+                    <div class="city__name">
+                        <h3>Swiper</h3>
+                    </div>
+                    <div class="hotels__grid__wrapper">
+                        <div class="hotels__grid">
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hotels__city city__alexandria">
+                    <div class="city__name">
+                        <h3>Alexandria</h3>
+                    </div>
+                    <div class="hotels__grid__wrapper">
+                        <div class="hotels__grid">
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                            <div class="hotel__box">
+                                <div class="hotel__image__holder">
+                                    <img src="img/hotels/alexandria/the__english__hotel.jpg" alt="">
+                                </div>
+                                <div class="hotel__info">
+                                    <h4 class="hotel__name">La Villa Paur</h4>
+                                    <p class="hotel__text">lorem inpsum test text more text info details sample</p>
+                                    <button class="hotel__btn">View</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <aside class="modal">
+        <div class="modal__box">
+            <div class="modal__left">
+                <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, excepturi!</h3>
+            </div>
+            <div class="modal__right">
+                <h3>Input your opinion</h3>
+                <div class="close">&Cross;</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur porro voluptatem 
+                    sit id facere vitae, eveniet iste debitis? Suscipit, quas?
+                </p>
+                <form class="modal__form">
+                    <div class="fullname">
+                        <div class="linput first-name">
+                            <label for="first-name" class="first-name-label">First Name</label>
+                            <input type="text" id="first-name">
+                        </div>
+                        <div class="linput last-name">
+                            <label for="last-name" class="last-name-label">Last Name</label>
+                            <input type="text" id="last-name">
+                        </div>
+                    </div>
+                    <div class="linput email">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="linput phone">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="linput message">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="send">
+                        <button type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
+    <footer>
+        <div class="footer-bg">
+            <div class="container footer-holder">
+                <ul class="f-list">
+                    <li><span class="ftheads">Menatours</span></li>
+                    <li><a href=""><i class="fa-solid fa-house"></i>Home</a></li>
+                    <li><a href=""><i class="fa-solid fa-plane-up"></i>Corporate travel management</a></li>
+                    <li><a href=""><i class="fa-solid fa-hotel"></i>Services</a></li>
+                    <li><a href=""><i class="fa-solid fa-question"></i>About</a></li>
+                </ul>
+                <ul class="f-list">
+                    <li><span class="ftheads">Search</span></li>
+                    <li class="search">
+                        <input type="text" placeholder="Search...">
+                        <label for=""><i class="fa-solid fa-search"></i></label>
+                    </li>
+                </ul>
+                <ul class="f-list">
+                    <li><spam class="ftheads">Menatours head office</spam></li>
+                    <li><a href="">El Nasr Bulding, Nile Street, Giza, Egypt</a></li>
+                    <li><a href="">Phone: <span class="phone">+20 2 3748 2231</span></a></li>
+                    <li><a href="">Fax: <span class="phone">+20 2 3335 4149</span></a></li>
+                    <li><a href="">Email: <span>business@menatours.com.eg</span></a></li>
+                    <li><a href="">Web: <span>www.menatours.com.eg</span></a></li>
+                </ul>
+                <ul class="f-list subscribe">
+                    <div class="subscribe-container">
+                        <li><span class="ftheads">Subscribe</span></li>
+                        <li>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="subscribe-email" placeholder="Enter your email">
+                        </li>
+                        <li>
+                            <label for="Interest">Interest</label>
+                            <div class="checkbox">
+                                <div class="checkbox-layer">
+                                    <input type="checkbox" name="Business">
+                                    <div class="checkbox-mark">&#x2714;</div>
+                                </div>
+                                <label for="Business" class="clabel">Business travel</label>
+                            </div>
+                            <div class="checkbox">
+                                <div class="checkbox-layer">
+                                    <input type="checkbox" name="Inbound">
+                                    <div class="checkbox-mark">&#x2714;</div>
+                                </div>
+                                <label for="Inbound" class="clabel">Inbound tourism</label>
+                            </div>
+                        </li>
+                        <li class="subscribe-message hidden">
+                            <i class="fa-solid fa-error"></i><h4>This is the message</h4>
+                        </li>
+                        <li>
+                            <button id="subscribe-btn">Subscribe</button>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyrights">
+                <h6>Copyright &copy; 2020 Mena Travel Inc. (Menatours) | All Rights Reserved</h6>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        let animatableElementObjs = [
+            {
+                element: document.querySelector('footer'),
+                scrollPercentage: 0.2,
+                animationClass: 'footerAnim',
+                type: 'fade',
+                repeat: 2
+            },
+            {
+                element: document.querySelector('.copyrights'),
+                scrollPercentage: 0,
+                animationClass: 'copyrightAnim',
+                type: 'fade',
+                repeat: 2
+            }
+        ];
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="scrollanimation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="main.js" type="module"></script>
+    <script src="hotels.js"></script>
+    <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script>
+        //                          SWIPER
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            rewind: true,
+            slidesPerView: 1,
+            spaceBetween: 25,
+            slidesPerGroup: 1,
+        
+            // Navigation arrows
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            }, 
+            
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 1,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 3,
+                    slidesPerGroup: 2,
+                    spaceBetween: 20
+                }
+            }
+        });
+    </script>
+</body>
+</html>

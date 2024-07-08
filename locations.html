@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Roboto&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/intl-tel-input-master/src/css/intlTelInput.css">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css"/>
     <link rel="stylesheet" href="styles/style.css" type="text/css">
 </head>
@@ -165,7 +164,7 @@
                     </ul>
                 </div>
                 <div class="map__image">
-                    <img src="https://www.mapsofworld.com/lat_long/maps/egypt-lat-long.jpg" alt="">
+                    <img src="https://www.mapsofworld.com/lat_long/maps/egypt-lat-long.jpg" loading="lazy" alt="">
                 </div>
             </div>
         </div>
@@ -196,25 +195,33 @@
                     <li><a href="">Web: <span>www.menatours.com.eg</span></a></li>
                 </ul>
                 <ul class="f-list subscribe">
-                    <li>Subscribe</li>
-                    <li>
-                        <label for="email">Email Address</label>
-                        <input type="email" placeholder="Enter your email">
-                    </li>
-                    <li>
-                        <label for="Interest">Interest</label>
-                        <div class="checkbox">
-                            <input type="checkbox" name="Business">
-                            <label for="Business" class="clabel">Business travel</label>
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="Inbound">
-                            <label for="Inbound" class="clabel">Inbound tourism</label>
-                        </div>
-                    </li>
-                    <li>
-                        <button>Subscribe</button>
-                    </li>
+                    <div class="subscribe-container">
+                        <li><span class="ftheads">Subscribe</span></li>
+                        <li>
+                            <label for="email">Email Address</label>
+                            <input type="email" placeholder="Enter your email">
+                        </li>
+                        <li>
+                            <label for="Interest">Interest</label>
+                            <div class="checkbox">
+                                <div class="checkbox-layer">
+                                    <input type="checkbox" name="Business">
+                                    <div class="checkbox-mark">&#x2714;</div>
+                                </div>
+                                <label for="Business" class="clabel">Business travel</label>
+                            </div>
+                            <div class="checkbox">
+                                <div class="checkbox-layer">
+                                    <input type="checkbox" name="Inbound">
+                                    <div class="checkbox-mark">&#x2714;</div>
+                                </div>
+                                <label for="Inbound" class="clabel">Inbound tourism</label>
+                            </div>
+                        </li>
+                        <li>
+                            <button>Subscribe</button>
+                        </li>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -225,8 +232,26 @@
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="main.js"></script>
+    <script>
+        let animatableElementObjs = [
+            {
+                element: document.querySelector('footer'),
+                scrollPercentage: 0.2,
+                animationClass: 'footerAnim',
+                type: 'fade',
+                repeat: 2
+            },
+            {
+                element: document.querySelector('.copyrights'),
+                scrollPercentage: 0,
+                animationClass: 'copyrightAnim',
+                type: 'fade',
+                repeat: 2
+            }
+        ];
+    </script>
+    <script src="scrollanimation.js"></script>
+    <script src="main.js" type="module"></script>
     <script src="locations.js"></script>
     <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
 </body>

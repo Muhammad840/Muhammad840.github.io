@@ -55,10 +55,59 @@ header.ofcontact {
                 .close {
                     display: none;
                 }
+                input.error, textarea.error {
+                    border: 1px solid rgb(161, 0, 0);
+                }
             }
         }
     }
 }
+
+#contact-message {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    h4 {
+        margin: 0;
+        line-height: 1.2;
+        opacity: 1;
+        transition: opacity .3s;
+    }
+    i {
+        display: flex;
+        align-items: center;
+        min-width: 13px;
+    }
+    margin-bottom: 10px;
+}
+#contact-message.error {
+    border: 1px solid rgb(161, 0, 0);
+    color: rgb(203, 0, 0);
+    background-color: #ff000025;
+}
+#contact-message.warning {
+    border: 1px solid rgb(161, 150, 0);
+    color: rgb(203, 183, 0);
+    background-color: #ffe60025;
+}
+#contact-message.success {
+    border: 1px solid rgb(59, 161, 0);
+    color: rgb(47, 203, 0);
+    background-color: #51ff0025;
+}
+
+#contact-message.hidden {
+    visibility: hidden;
+    height: 0;
+    margin-bottom: 0;
+    h4 {
+        opacity: 0;
+        transition: none;
+    }
+}
+
 
 @media (max-width: 1024px) {
     .contact .modal__box {

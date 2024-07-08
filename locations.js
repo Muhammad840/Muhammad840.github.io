@@ -10,6 +10,16 @@ let officeLis = Array.from(dropdown.children)
 let markers = Array.from(document.querySelectorAll('.marker'))
 let mapiFrame = document.querySelector('.mapiFrame')
 const 
+Giza = {
+    [keys[0]]: 'Giza',
+    [keys[1]]: '7 St.Al-Bustan Al-Saaidi, Taalat Harb, Cairo',
+    [keys[2]]: '01000792076',
+    [keys[3]]: '23900531',
+    [keys[4]]: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d218360.36364995778!2d29.814800765744582!3d31.224034935279008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f5c49126710fd3%3A0xb4e0cda629ee6bb9!2sAlexandria%2C%20Alexandria%20Governorate!5e0!3m2!1sen!2seg!4v1669403865343!5m2!1sen!2seg',
+    [keys[5]]: ['39.3%', '13.9%'],
+    [keys[6]]: 'Alex@gmail.com',
+    [keys[7]]: 'Eissa Umran'
+},
 Alexandria = {
     [keys[0]]: 'Alexandria',
     [keys[1]]: 'Nagib St.31',
@@ -41,7 +51,7 @@ Luxor = {
     [keys[7]]: 'Ibrahim Yaqub'
 }
 
-let offices = [Alexandria, Cairo, Luxor, Luxor, Luxor]
+let offices = [Giza, Alexandria, Cairo, Luxor, Luxor, Luxor]
 
 /*       Dropdown display*/
 document.body.addEventListener('click', (e) => {

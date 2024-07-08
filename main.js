@@ -517,87 +517,93 @@ export {goToSection}
                Subscribe Validation            *
 ************************************************
 */
-const subscribeTransit = document.querySelector('.subscribe-message').style.transition
-const subsPadding = getComputedStyle(document.querySelector('.subscribe-message')).getPropertyValue('padding')
-const subMessagePaddingStr = getComputedStyle(document.querySelector('.subscribe-message')).getPropertyValue('padding-bottom')
-const subMessagePadding = parseInt(subMessagePaddingStr.substring(0, subMessagePaddingStr.length -1))
-const subMessageHPaddingStr = getComputedStyle(document.querySelector('.subscribe-message')).getPropertyValue('padding-right')
-const subMessageHPadding = parseInt(subMessageHPaddingStr.substring(0, subMessagePaddingStr.length -1))
-console.log(subMessageHPadding)
-console.log(subsPadding)
-document.querySelector('.subscribe-message').style.padding = '0 ' + subMessageHPadding + 'px'
-const subMessageHeight = document.querySelector('.subscribe-message').scrollHeight
-let messageHidden = true;
-function subscribeMessage(state) {
-    const message = document.querySelector('.subscribe-message')
-    message.style.transition = 'all 0.3s'
-    message.style.height = '0'
-    message.style.padding = '0 ' + subMessageHPadding + 'px'
-    message.classList.add('hidden')
-    message.classList.remove('success')
-    message.classList.remove('warning')
-    message.classList.remove('error')
-    const ico = message.firstElementChild
-    ico.className = ''
-    switch (state) {
-        case 'success':
-            message.style.height = message.lastElementChild.scrollHeight + (subMessagePadding*2) + 'px'
-            message.style.padding = subsPadding
-            message.classList.remove('hidden')
-            message.classList.add('success')
-            ico.className = 'fa-regular fa-circle-check'
-            messageHidden = false;
-        break
-        case 'warning':
-            message.style.height = message.lastElementChild.scrollHeight + (subMessagePadding*2) + 'px'
-            message.style.padding = subsPadding
-            message.classList.remove('hidden')
-            message.classList.add('warning')
-            ico.className = 'fa-regular fa-circle-exclamation'
-            messageHidden = false;
-        break
-        case 'error':
-            message.style.height = message.lastElementChild.scrollHeight + (subMessagePadding*2) + 'px'
-            message.style.padding = subsPadding
-            message.classList.remove('hidden')
-            message.classList.add('error')
-            ico.className = 'fa-solid fa-triangle-exclamation'
-            messageHidden = false;
-        break
-        default:
-        messageHidden = true
-        console.log('default ran')
-    };
-    console.log(messageHidden)
-}
+if (document.querySelector('.subscribe-message')) {
+    const subscribeTransit = document.querySelector('.subscribe-message').style.transition
+    const subsPadding = getComputedStyle(document.querySelector('.subscribe-message')).getPropertyValue('padding')
+    const subMessagePaddingStr = getComputedStyle(document.querySelector('.subscribe-message')).getPropertyValue('padding-bottom')
+    const subMessagePadding = parseInt(subMessagePaddingStr.substring(0, subMessagePaddingStr.length -1))
+    const subMessageHPaddingStr = getComputedStyle(document.querySelector('.subscribe-message')).getPropertyValue('padding-right')
+    const subMessageHPadding = parseInt(subMessageHPaddingStr.substring(0, subMessagePaddingStr.length -1))
+    console.log(subMessageHPadding)
+    console.log(subsPadding)
+    document.querySelector('.subscribe-message').style.padding = '0 ' + subMessageHPadding + 'px'
+    const subMessageHeight = document.querySelector('.subscribe-message').scrollHeight
+    let messageHidden = true;
+    function subscribeMessage(state) {
+        const message = document.querySelector('.subscribe-message')
+        message.style.transition = 'all 0.3s'
+        message.style.height = '0'
+        message.style.padding = '0 ' + subMessageHPadding + 'px'
+        message.classList.add('hidden')
+        message.classList.remove('success')
+        message.classList.remove('warning')
+        message.classList.remove('error')
+        const ico = message.firstElementChild
+        ico.className = ''
+        switch (state) {
+            case 'success':
+                message.style.height = message.lastElementChild.scrollHeight + (subMessagePadding*2) + 'px'
+                message.style.padding = subsPadding
+                message.classList.remove('hidden')
+                message.classList.add('success')
+                ico.className = 'fa-regular fa-circle-check'
+                messageHidden = false;
+            break
+            case 'warning':
+                message.style.height = message.lastElementChild.scrollHeight + (subMessagePadding*2) + 'px'
+                message.style.padding = subsPadding
+                message.classList.remove('hidden')
+                message.classList.add('warning')
+                ico.className = 'fa-regular fa-circle-exclamation'
+                messageHidden = false;
+            break
+            case 'error':
+                message.style.height = message.lastElementChild.scrollHeight + (subMessagePadding*2) + 'px'
+                message.style.padding = subsPadding
+                message.classList.remove('hidden')
+                message.classList.add('error')
+                ico.className = 'fa-solid fa-triangle-exclamation'
+                messageHidden = false;
+            break
+            default:
+            messageHidden = true
+        };
+    }
 
-document.querySelector('#subscribe-btn').addEventListener('click', () => {
-    const message = document.querySelector('.subscribe-message').lastElementChild
-    const email = document.querySelector('#subscribe-email').value
-    if (email === '') {
-        message.textContent = 'Please enter an email address, this is a test for three lines'
-        subscribeMessage('error')
-    }
-    else if (
-        !email.includes('@')
-        || !email.includes('.')
-        || email.indexOf('@') > email.lastIndexOf('.')
-        || email.indexOf('@') !== email.lastIndexOf('@')
-        || email.indexOf('@') == 0
-        || email.lastIndexOf('@') == email.length-1
-        || email.lastIndexOf('.') == email.length-1
-    ) 
-    {
-        message.textContent = 'Invalid email address'
-        subscribeMessage('error')
-    }
-    else if (!email.includes('gmail.com')) {
-        message.textContent = 'Untrusted domain'
-        subscribeMessage('warning')
-    }
-    else {
-        message.textContent = 'Subscribed'
-        subscribeMessage('success')
-    }
-    setTimeout(subscribeMessage, 4000)
-})
+    //let removeMessage
+    document.querySelector('#subscribe-btn').addEventListener('click', () => {
+        //clearTimeout(removeMessage)
+        const message = document.querySelector('.subscribe-message').lastElementChild
+        const email = document.querySelector('#subscribe-email').value
+        if (email === '') {
+            message.textContent = 'Please enter an email address'
+            subscribeMessage('error')
+        }
+        else if (
+            !email.includes('@')
+            || !email.includes('.')
+            || email.indexOf('@') > email.lastIndexOf('.')
+            || email.indexOf('@') !== email.lastIndexOf('@')
+            || email.indexOf('@') == 0
+            || email.lastIndexOf('@') == email.length-1
+            || email.lastIndexOf('.') == email.length-1
+        ) 
+        {
+            message.textContent = 'Invalid email address'
+            subscribeMessage('error')
+        }
+        else if (!email.includes('gmail.com')) {
+            message.textContent = 'Untrusted domain'
+            subscribeMessage('warning')
+        }
+        else {
+            message.textContent = 'Subscribed'
+            subscribeMessage('success')
+            setTimeout(subscribeMessage, 4000)
+        }
+        //removeMessage = setTimeout(subscribeMessage, 7000)
+    })
+
+    document.querySelector('#subscribe-email').addEventListener('focus', subscribeMessage)
+
+}
