@@ -519,25 +519,36 @@
                     <li><a href="">Web: <span>www.menatours.com.eg</span></a></li>
                 </ul>
                 <ul class="f-list subscribe">
-                    <li>Subscribe</li>
-                    <li>
-                        <label for="email">Email Address</label>
-                        <input type="email" placeholder="Enter your email">
-                    </li>
-                    <li>
-                        <label for="Interest">Interest</label>
-                        <div class="checkbox">
-                            <input type="checkbox" name="Business">
-                            <label for="Business" class="clabel">Business travel</label>
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="Inbound">
-                            <label for="Inbound" class="clabel">Inbound tourism</label>
-                        </div>
-                    </li>
-                    <li>
-                        <button>Subscribe</button>
-                    </li>
+                    <div class="subscribe-container">
+                        <li><span class="ftheads">Subscribe</span></li>
+                        <li>
+                            <label for="email">Email Address</label>
+                            <input type="email" id="subscribe-email" placeholder="Enter your email">
+                        </li>
+                        <li>
+                            <label for="Interest">Interest</label>
+                            <div class="checkbox">
+                                <div class="checkbox-layer">
+                                    <input type="checkbox" name="Business">
+                                    <div class="checkbox-mark">&#x2714;</div>
+                                </div>
+                                <label for="Business" class="clabel">Business travel</label>
+                            </div>
+                            <div class="checkbox">
+                                <div class="checkbox-layer">
+                                    <input type="checkbox" name="Inbound">
+                                    <div class="checkbox-mark">&#x2714;</div>
+                                </div>
+                                <label for="Inbound" class="clabel">Inbound tourism</label>
+                            </div>
+                        </li>
+                        <li class="subscribe-message hidden">
+                            <i class="fa-solid fa-error"></i><h4>This is the message</h4>
+                        </li>
+                        <li>
+                            <button id="subscribe-btn">Subscribe</button>
+                        </li>
+                    </div>
                 </ul>
             </div>
         </div>
