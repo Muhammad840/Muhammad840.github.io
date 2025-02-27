@@ -116,22 +116,26 @@ const APP = (function (){
             city: 'Sharm Al-Sheikh',
             hotels: [
                 {
-                    [hotel_info[0]]: 'Ainsi La Vida',
+                    [hotel_info[0]]: 'Huricane
+                        ',
                     [hotel_info[2]]: 'This is a description of a very comfortable wide hotel that has 30 rooms',
                     [hotel_info[3]]: 3
                 },
                 {
-                    [hotel_info[0]]: 'Ainsi La Vida',
+                    [hotel_info[0]]: 'Huricane
+                        ',
                     [hotel_info[2]]: 'This is a description of a very comfortable wide hotel that has 30 rooms',
                     [hotel_info[3]]: 3
                 },
                 {
-                    [hotel_info[0]]: 'Ainsi La Vida',
+                    [hotel_info[0]]: 'Huricane
+                        ',
                     [hotel_info[2]]: 'This is a description of a very comfortable wide hotel that has 30 rooms',
                     [hotel_info[3]]: 3
                 },
                 {
-                    [hotel_info[0]]: 'Ainsi La Vida',
+                    [hotel_info[0]]: 'Huricane
+                        ',
                     [hotel_info[2]]: 'This is a description of a very comfortable wide hotel that has 30 rooms',
                     [hotel_info[3]]: 3
                 }
